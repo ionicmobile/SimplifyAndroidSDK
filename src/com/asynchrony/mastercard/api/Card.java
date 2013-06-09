@@ -7,12 +7,24 @@ package com.asynchrony.mastercard.api;
 public class Card {
     private String number;
 
+    public Card() {
+        this("");
+    }
+
+    public Card(String number) {
+        this.number = number;
+    }
+
     public String getNumber() {
         return number;
     }
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Brand getBrand() {
+        return Brand.lookup(number);
     }
 
     public boolean isValid() {
@@ -23,6 +35,10 @@ public class Card {
      * Returns true if the card # passes Luhn's formula.
      */
     public static boolean validate(String cardNumber) {
+        if (cardNumber == null || cardNumber.trim().length() == 0) {
+            return false;
+        }
+
         int length = cardNumber.length();
         int sum = 0;
         for (int i = length - 2; i >= 0; i -= 2) {
@@ -56,6 +72,10 @@ public class Card {
         }
 
         public static Brand lookup(String cardNumber) {
+            if (cardNumber == null || cardNumber.trim().length() == 0) {
+                return UNKNOWN;
+            }
+
             for (Brand brand : values()) {
                 for (String prefix : brand.prefixes) {
                     if (cardNumber.startsWith(prefix)) {
