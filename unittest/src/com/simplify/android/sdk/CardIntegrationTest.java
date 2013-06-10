@@ -33,7 +33,7 @@ public class CardIntegrationTest extends TestCase {
     }};
 
     public void testCardNumberValidity() {
-        for (Card.Brand brand : data.keySet()){
+        for (Card.Brand brand : data.keySet()) {
             String[] cards = data.get(brand);
             for (String cardNumber : cards) {
                 assertTrue(Card.validate(cardNumber));
@@ -44,7 +44,7 @@ public class CardIntegrationTest extends TestCase {
     }
 
     public void testCardBrandValidity() {
-        for (Card.Brand brand : data.keySet()){
+        for (Card.Brand brand : data.keySet()) {
             String[] cards = data.get(brand);
             for (String cardNumber : cards) {
                 Card card = new Card(cardNumber);

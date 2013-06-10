@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CreditCardEditorView extends LinearLayout {
-    EditText ccView1,ccView2,ccView3,ccView4;
+    EditText ccView1, ccView2, ccView3, ccView4;
+
     public CreditCardEditorView(Context context) {
         super(context);
         init(context);
