@@ -9,13 +9,12 @@ import android.widget.EditText;
  * @author Paul S. Hawke (paul.hawke@gmail.com)
  *         On: 6/11/13 at 2:12 AM
  */
-public class BrandChangedWatcher implements TextWatcher {
+public class BrandChangedTextWatcher implements TextWatcher {
     private Card.Brand brand;
-    private EditText text;
     private BrandChangedListener listener;
     private EditText view;
 
-    public BrandChangedWatcher(EditText view, BrandChangedListener listener) {
+    public BrandChangedTextWatcher(EditText view, BrandChangedListener listener) {
         this.view = view;
         this.listener = listener;
         this.brand = Card.Brand.UNKNOWN;
