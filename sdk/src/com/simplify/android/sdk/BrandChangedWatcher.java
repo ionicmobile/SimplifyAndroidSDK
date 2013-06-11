@@ -2,6 +2,7 @@ package com.simplify.android.sdk;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 
 /**
@@ -29,6 +30,7 @@ public class BrandChangedWatcher implements TextWatcher {
     public void afterTextChanged(Editable s) {
         Card.Brand brandInField = Card.Brand.lookup(s.toString());
         if (!brand.equals(brandInField)) {
+            this.brand = brandInField;
             listener.brandChanged(view, brand);
         }
     }

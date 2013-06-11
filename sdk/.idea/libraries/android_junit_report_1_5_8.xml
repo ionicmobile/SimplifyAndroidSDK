@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="android-junit-report-1.5.8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/android-junit-report-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/dexmaker-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/dexmaker-mockito-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/mockito-all-1.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/robotium-solo-3.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/robotium-solo-3.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/commons-io-2.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../unittest/libs/mockito-all-1.9.5.jar!/" />
+    </SOURCES>
+  </library>
+</component>
