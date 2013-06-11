@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="cc_icon"/>
+    <item type="id" name="cc_field"/>
+    <item type="id" name="cc_exp_month"/>
+    <item type="id" name="cc_exp_separator"/>
+    <item type="id" name="cc_exp_year"/>
+    <item type="id" name="cc_cvv"/>
+</resources>
