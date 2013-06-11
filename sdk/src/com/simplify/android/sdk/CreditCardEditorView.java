@@ -6,8 +6,12 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CreditCardEditorView extends LinearLayout {
-    EditText ccView1;
+    private EditText ccView1;
+    private List<BrandChangedListener> brandChangedListeners;
 
     public CreditCardEditorView(Context context) {
         super(context);
@@ -25,9 +29,14 @@ public class CreditCardEditorView extends LinearLayout {
     }
 
     private void init(Context context) {
+        brandChangedListeners = new ArrayList<BrandChangedListener>();
         this.setOrientation(HORIZONTAL);
         ccView1 = createTextView(context);
         addView(ccView1, new LayoutParams(600, LayoutParams.WRAP_CONTENT, 0));
+    }
+
+    public void addBrandChangedListener(BrandChangedListener listener) {
+        brandChangedListeners.add(listener);
     }
 
     private EditText createTextView(Context context) {
@@ -36,6 +45,13 @@ public class CreditCardEditorView extends LinearLayout {
         text.setHint("0000 0000 0000 0000");
         text.setSingleLine(true);
         text.addTextChangedListener(new CreditCardTextWatcher(text));
+        text.addTextChangedListener(new BrandChangedWatcher(text, new BrandChangedListener() {
+            public void brandChanged(EditText view, Card.Brand brand) {
+                for (BrandChangedListener brandChangedListener : brandChangedListeners) {
+                    brandChangedListener.brandChanged(view, brand);
+                }
+            }
+        }));
         return text;
     }
 
