@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="Hello World, MainActivity" />
 
-    <com.simplify.android.sdk.CreditCardEditorView
+    <com.simplify.android.sdk.CreditCardEditor
         android:id="@+id/credit_card"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
