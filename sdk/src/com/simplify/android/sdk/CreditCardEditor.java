@@ -110,13 +110,32 @@ public class CreditCardEditor extends RelativeLayout {
         lp.addRule(RelativeLayout.BELOW, ccEditorView.getId());
         lp.addRule(RelativeLayout.ALIGN_RIGHT, ccEditorView.getId());
         addView(cvv, lp);
+
+        cardTextWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+            @Override
+            public void entryComplete(View editorView) {
+                expMonth.requestFocus();
+            }
+        });
+        expMonthWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+            @Override
+            public void entryComplete(View editorView) {
+                expYear.requestFocus();
+            }
+        });
+        expYearWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+            @Override
+            public void entryComplete(View editorView) {
+                cvv.requestFocus();
+            }
+        });
     }
 
     private ImageView createIconView(Context context) {
         ImageView imageView = new ImageView(context);
         imageView.setId(R.id.cc_icon);
         imageView.setImageResource(R.drawable.brand_unknown);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         return imageView;
     }
 
