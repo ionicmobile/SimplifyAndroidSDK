@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">ACTIVITY_ENTRY_NAME</string>
     <string name="slash">/</string>
+    <string name="cc_field_hint">0000 0000 0000 0000</string>
+    <string name="cc_exp_month_hint">mm</string>
+    <string name="cc_exp_year_hint">yy</string>
+    <string name="three_digit_cvv_hint">000</string>
+    <string name="four_digit_cvv_hint">0000</string>
 </resources>

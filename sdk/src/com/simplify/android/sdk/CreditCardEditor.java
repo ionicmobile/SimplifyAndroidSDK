@@ -1,6 +1,7 @@
 package com.simplify.android.sdk;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -12,6 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CreditCardEditor extends RelativeLayout {
+    public static final int MIN_MONTH = 1;
+    public static final int MAX_MONTH = 12;
     private Map<Card.Brand, Integer> brandToImageResourceMap =
             new HashMap<Card.Brand, Integer>() {{
                 put(Card.Brand.UNKNOWN, R.drawable.brand_unknown);
@@ -31,6 +34,8 @@ public class CreditCardEditor extends RelativeLayout {
     private FixedLengthTextWatcher expYearWatcher;
     private FixedLengthTextWatcher cvvWatcher;
     private BrandChangedTextWatcher brandChangedWatcher;
+    private String threeDigitCvvHint;
+    private String fourDigitCvvHint;
 
     public CreditCardEditor(Context context) {
         super(context);
@@ -49,20 +54,25 @@ public class CreditCardEditor extends RelativeLayout {
 
     private void init(Context context) {
         brandChangedListeners = new ArrayList<BrandChangedListener>();
+        threeDigitCvvHint = getResources().getString(R.string.three_digit_cvv_hint);
+        fourDigitCvvHint = getResources().getString(R.string.four_digit_cvv_hint);
 
-        ccEditorView = createTextView(context, R.id.cc_field, "0000 0000 0000 0000");
+        Resources resources = context.getResources();
+
+        ccEditorView = createTextView(context, R.id.cc_field, resources.getString(R.string.cc_field_hint));
         cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
         brandChangedWatcher = new BrandChangedTextWatcher(ccEditorView, new BrandChangedHandler());
         ccEditorView.addTextChangedListener(cardTextWatcher);
         ccEditorView.addTextChangedListener(brandChangedWatcher);
-        ccEditorView.setPadding(ccEditorView.getPaddingLeft() + 40,
+        ccEditorView.setPadding((int) (ccEditorView.getPaddingLeft() + resources.getDimension(R.dimen.edit_field_icon_space)),
                 ccEditorView.getPaddingTop(), ccEditorView.getPaddingRight(), ccEditorView.getPaddingBottom());
 
         imageView = createIconView(context);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.ALIGN_BOTTOM, ccEditorView.getId());
-        imageView.setPadding(12, 0, 0, 12);
+        imageView.setPadding((int) resources.getDimension(R.dimen.icon_top_padding), 0, 0,
+                (int) resources.getDimension(R.dimen.icon_bottom_padding));
         addView(imageView, lp);
 
         lp = new RelativeLayout.LayoutParams(
@@ -72,8 +82,8 @@ public class CreditCardEditor extends RelativeLayout {
         addView(ccEditorView, lp);
         ccEditorView.setNextFocusForwardId(R.id.cc_exp_month);
 
-        expMonth = createTextView(context, R.id.cc_exp_month, "00");
-        expMonthWatcher = new FixedLengthTextWatcher(expMonth, 2);
+        expMonth = createTextView(context, R.id.cc_exp_month, resources.getString(R.string.cc_exp_month_hint));
+        expMonthWatcher = new IntegerValueTextWatcher(expMonth, 2, MIN_MONTH, MAX_MONTH);
         expMonth.addTextChangedListener(expMonthWatcher);
         lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -83,16 +93,18 @@ public class CreditCardEditor extends RelativeLayout {
         expMonth.setNextFocusForwardId(R.id.cc_exp_year);
 
         TextView slash = new TextView(context);
+        slash.setTextSize(resources.getDimension(R.dimen.expiration_date_separator_text_size));
         slash.setText(R.string.slash);
         slash.setId(R.id.cc_exp_separator);
-        slash.setPadding(0,0,0,8);
+        slash.setPadding((int) resources.getDimension(R.dimen.slash_top_padding), 0, 0,
+                (int) resources.getDimension(R.dimen.slash_bottom_padding));
         lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.ALIGN_BOTTOM, expMonth.getId());
         lp.addRule(RelativeLayout.RIGHT_OF, expMonth.getId());
         addView(slash, lp);
 
-        expYear = createTextView(context, R.id.cc_exp_year, "00");
+        expYear = createTextView(context, R.id.cc_exp_year, getResources().getString(R.string.cc_exp_year_hint));
         expYearWatcher = new FixedLengthTextWatcher(expYear, 2);
         expYear.addTextChangedListener(expYearWatcher);
         lp = new RelativeLayout.LayoutParams(
@@ -102,7 +114,7 @@ public class CreditCardEditor extends RelativeLayout {
         addView(expYear, lp);
         expYear.setNextFocusForwardId(R.id.cc_cvv);
 
-        cvv = createTextView(context, R.id.cc_cvv, "000");
+        cvv = createTextView(context, R.id.cc_cvv, threeDigitCvvHint);
         cvvWatcher = new FixedLengthTextWatcher(cvv, 3);
         cvv.addTextChangedListener(cvvWatcher);
         lp = new RelativeLayout.LayoutParams(
@@ -189,7 +201,7 @@ public class CreditCardEditor extends RelativeLayout {
         public void brandChanged(View sourceView, Card.Brand brand) {
             cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
             cvvWatcher.setMaxFieldLength(brand.getCvvLength());
-            cvv.setHint(brand.getCvvLength() == 4 ? "0000" : "000");
+            cvv.setHint(brand.getCvvLength() == 4 ? fourDigitCvvHint : threeDigitCvvHint);
             imageView.setImageResource(brandToImageResourceMap.get(brand));
             for (BrandChangedListener brandChangedListener : brandChangedListeners) {
                 brandChangedListener.brandChanged(CreditCardEditor.this, brand);

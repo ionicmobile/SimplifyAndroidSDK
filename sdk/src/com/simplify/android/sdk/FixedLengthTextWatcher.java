@@ -45,9 +45,13 @@ public class FixedLengthTextWatcher implements TextWatcher {
             currentlyChanging = false;
         }
 
-        if (entryCompleteListener != null && watched.getText().length() == maxFieldLength) {
+        if (shouldFireCompleted(watched.getText())) {
             entryCompleteListener.entryComplete(watched);
         }
+    }
+
+    protected boolean shouldFireCompleted(Editable text) {
+        return entryCompleteListener != null && text.length() == maxFieldLength;
     }
 
     private void setTextPreservingCursorLocation(Editable s) {
