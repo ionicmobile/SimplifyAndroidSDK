@@ -38,21 +38,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1e470-f576-43a0-b2d3-7d24ff759427" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../unittest/Simplify Android SDK Test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_junit_report_1_5_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../unittest/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedListener.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedWatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardValidationTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardValidationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/Simplify Android SDK Tests.iml" afterPath="$PROJECT_DIR$/../unittest/Simplify Android SDK Tests.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/ant.properties" afterPath="$PROJECT_DIR$/../unittest/ant.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/build.xml" afterPath="$PROJECT_DIR$/../unittest/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardTextWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/Simplify Android SDK App.iml" afterPath="$PROJECT_DIR$/../app/Simplify Android SDK App.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/res/layout/main.xml" afterPath="$PROJECT_DIR$/../app/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/project.properties" afterPath="$PROJECT_DIR$/../app/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/project.properties" afterPath="$PROJECT_DIR$/../unittest/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Simplify Android SDK.iws" />
@@ -61,15 +55,17 @@
     <file path="$PROJECT_DIR$/../app/res/values/strings.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370890957310" ignored="false" />
     <file path="/a.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370892494164" ignored="false" />
     <file path="/main.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370892540549" ignored="false" />
-    <file path="/CreditCardEditorView.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370960173427" ignored="false" />
+    <file path="/CreditCardEditorView.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961536255" ignored="false" />
     <file path="/fragment.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370959892825" ignored="false" />
     <file path="/a.dummy" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370959949908" ignored="false" />
-    <file path="/CreditCardTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370896879640" ignored="false" />
-    <file path="/CreditCardTextWatcherTest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370897323019" ignored="false" />
-    <file path="/Dummy.txt" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370957559643" ignored="false" />
+    <file path="/CreditCardTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963638519" ignored="false" />
+    <file path="/CreditCardTextWatcherTest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961736347" ignored="false" />
+    <file path="/Dummy.txt" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961050872" ignored="false" />
     <file path="/CreditCardEditorViewTest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370960076318" ignored="false" />
     <file path="/BrandChangedListener.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370955355042" ignored="false" />
-    <file path="/BrandChangedWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370957786610" ignored="false" />
+    <file path="/BrandChangedWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961139304" ignored="false" />
+    <file path="$PROJECT_DIR$/../unittest/bin/AndroidManifest.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
+    <file path="$PROJECT_DIR$/../unittest/bin/jarlist.cache" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,21 +126,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreditCardEditorViewTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="51" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="15" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreditCardEditorView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java">
+      <file leaf-file-name="CreditCardEditorTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="60" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.8908507">
+            <state line="36" column="0" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditCardEditor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="29" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrandChangedTextWatcher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FixedLengthTextWatcher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="77" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.750416">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="22" selection-start="3048" selection-end="3048" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditCardTextWatcherTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="28" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../app/res/layout/main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="-4.9038463">
               <folding />
             </state>
           </provider>
@@ -169,13 +220,19 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/../app/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardTextWatcher.java" />
-        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedListener.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedWatcher.java" />
-        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardTextWatcher.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardNumberTextWatcher.java" />
+        <option value="$PROJECT_DIR$/../app/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
+        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java" />
+        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java" />
       </list>
     </option>
   </component>
@@ -302,7 +359,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -315,55 +372,17 @@
     <property name="project.structure.side.proportion" value="0.30011588" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="Repository.Attach.Sources" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/../unittest/libs" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/../unittest/libs" />
   </component>
-  <component name="RunManager" selected="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges">
-    <configuration default="false" name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
-      <module name="Simplify Android SDK App" />
-      <option name="ACTIVITY_CLASS" value="com.simplify.android.sdk.MainActivity" />
-      <option name="MODE" value="specific_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <RunnerSettings RunnerId="AndroidDebugRunner" />
-      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Application.Simplify Android SDK App">
     <configuration default="false" name="com.simplify.android.sdk in Simplify Android SDK Tests" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
       <module name="Simplify Android SDK Tests" />
-      <option name="TESTING_TYPE" value="1" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="com.simplify.android.sdk" />
-      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <RunnerSettings RunnerId="AndroidDebugRunner" />
-      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="com.simplify.android.sdk in Simplify Android SDK Test" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
-      <module name="Simplify Android SDK Test" />
       <option name="TESTING_TYPE" value="1" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
@@ -422,6 +441,46 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="com.simplify.android.sdk in Simplify Android SDK Test" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
+      <module name="Simplify Android SDK Test" />
+      <option name="TESTING_TYPE" value="1" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="com.simplify.android.sdk" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CreditCardTextWatcherTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
+      <module name="Simplify Android SDK Test" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.simplify.android.sdk.CreditCardTextWatcherTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -454,6 +513,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -479,19 +551,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -558,6 +617,8 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
     <configuration default="false" name="Simplify Android SDK Tests" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -599,20 +660,20 @@
     <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Android Application.Simplify Android SDK App" />
       <item index="1" class="java.lang.String" itemvalue="Android Tests.Simplify Android SDK Tests" />
-      <item index="2" class="java.lang.String" itemvalue="Android Application.MainActivity" />
+      <item index="2" class="java.lang.String" itemvalue="Android Tests.Simplify Android SDK Test" />
       <item index="3" class="java.lang.String" itemvalue="Android Tests.com.simplify.android.sdk in Simplify Android SDK Tests" />
-      <item index="4" class="java.lang.String" itemvalue="Android Tests.Simplify Android SDK Test" />
-      <item index="5" class="java.lang.String" itemvalue="Android Tests.com.simplify.android.sdk in Simplify Android SDK Test" />
-      <item index="6" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest" />
-      <item index="7" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
+      <item index="4" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest" />
+      <item index="5" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
+      <item index="6" class="java.lang.String" itemvalue="Android Tests.com.simplify.android.sdk in Simplify Android SDK Test" />
+      <item index="7" class="java.lang.String" itemvalue="Android Tests.CreditCardTextWatcherTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
-        <item index="1" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
+        <item index="0" class="java.lang.String" itemvalue="Android Tests.CreditCardTextWatcherTest" />
+        <item index="1" class="java.lang.String" itemvalue="Android Tests.com.simplify.android.sdk in Simplify Android SDK Test" />
         <item index="2" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
         <item index="3" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
-        <item index="4" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest" />
+        <item index="4" class="java.lang.String" itemvalue="Android Tests.CreditCardEditorViewTest.testBrandChangeEventFiredWhenTextChanges" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -648,30 +709,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1553" height="1090" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956812" sideWeight="0.67070216" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956812" sideWeight="0.672165" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.50033176" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24950232" sideWeight="0.671134" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32886598" sideWeight="0.4996682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24950232" sideWeight="0.672165" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32783505" sideWeight="0.4996682" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999197" sideWeight="0.67070216" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999197" sideWeight="0.67070216" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -779,47 +840,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../app/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/BrandDiscoveryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="0.00996264">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardTextWatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="144" selection-end="165" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="64" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -838,18 +861,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="51" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="13" column="0" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java">
+    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="60" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.8908507">
+        <state line="30" column="28" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="-4.9038463">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="22" selection-start="3048" selection-end="3048" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="77" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.750416">
           <folding />
         </state>
       </provider>
@@ -906,11 +972,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Simplify Android SDK Test</last-edited>
+          <last-edited>Simplify Android SDK App</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.24449594" />
+                <option value="0.30011588" />
               </list>
             </option>
           </splitter-proportions>

@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 import static org.mockito.Mockito.*;
 
-public class CreditCardEditorViewTest extends AndroidTestCase {
+public class CreditCardEditorTest extends AndroidTestCase {
 
     @Mock
     private BrandChangedListener brandChangedListener;
@@ -21,7 +21,7 @@ public class CreditCardEditorViewTest extends AndroidTestCase {
     }
 
     public void testBrandChangeEventFiredWhenTextChanges() {
-        CreditCardEditorView view = new CreditCardEditorView(getContext());
+        CreditCardEditor view = new CreditCardEditor(getContext());
         view.addBrandChangedListener(brandChangedListener);
 
         view.setCardNumber("4111");

@@ -108,7 +108,7 @@ public class Card {
         MASTERCARD(16,3, "51", "52", "53", "54", "55"),
         DISCOVER(16,3, "65", "6011", "644", "645", "646", "647", "648", "649"),
         AMEX(15,4, "34", "37"),
-        UNKNOWN(-1, -1);
+        UNKNOWN(16, 3);
         private final String[] prefixes;
         private final int length;
         private final int cvvLength;

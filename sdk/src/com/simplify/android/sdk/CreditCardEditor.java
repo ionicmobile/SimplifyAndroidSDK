@@ -10,23 +10,23 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreditCardEditorView extends LinearLayout {
+public class CreditCardEditor extends LinearLayout {
     private EditText ccEditorView;
     private List<BrandChangedListener> brandChangedListeners;
-    private CreditCardTextWatcher cardTextWatcher;
-    private BrandChangedWatcher brandChangedWatcher;
+    private FixedLengthTextWatcher cardTextWatcher;
+    private BrandChangedTextWatcher brandChangedWatcher;
 
-    public CreditCardEditorView(Context context) {
+    public CreditCardEditor(Context context) {
         super(context);
         init(context);
     }
 
-    public CreditCardEditorView(Context context, AttributeSet attrs) {
+    public CreditCardEditor(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public CreditCardEditorView(Context context, AttributeSet attrs, int defStyle) {
+    public CreditCardEditor(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context);
     }
@@ -35,8 +35,8 @@ public class CreditCardEditorView extends LinearLayout {
         brandChangedListeners = new ArrayList<BrandChangedListener>();
         this.setOrientation(HORIZONTAL);
         ccEditorView = createTextView(context);
-        cardTextWatcher = new CreditCardTextWatcher(ccEditorView);
-        brandChangedWatcher = new BrandChangedWatcher(ccEditorView, new BrandChangedHandler());
+        cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
+        brandChangedWatcher = new BrandChangedTextWatcher(ccEditorView, new BrandChangedHandler());
         ccEditorView.addTextChangedListener(cardTextWatcher);
         ccEditorView.addTextChangedListener(brandChangedWatcher);
 
@@ -65,8 +65,9 @@ public class CreditCardEditorView extends LinearLayout {
 
     private class BrandChangedHandler implements BrandChangedListener {
         public void brandChanged(View sourceView, Card.Brand brand) {
+            cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
             for (BrandChangedListener brandChangedListener : brandChangedListeners) {
-                brandChangedListener.brandChanged(CreditCardEditorView.this, brand);
+                brandChangedListener.brandChanged(CreditCardEditor.this, brand);
             }
         }
     }
