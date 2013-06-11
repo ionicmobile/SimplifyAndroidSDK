@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Simplify Android SDK.iml" filepath="$PROJECT_DIR$/Simplify Android SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/../app/Simplify Android SDK App.iml" filepath="$PROJECT_DIR$/../app/Simplify Android SDK App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../unittest/Simplify Android SDK Tests.iml" filepath="$PROJECT_DIR$/../unittest/Simplify Android SDK Tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../unittest/Simplify Android SDK Test.iml" filepath="$PROJECT_DIR$/../unittest/Simplify Android SDK Test.iml" />
     </modules>
   </component>
 </project>
