@@ -1,8 +1,8 @@
 package com.simplify.android.sdk;
 
-import com.simplify.android.sdk.Card;
 import junit.framework.TestCase;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,8 +36,8 @@ public class CardIntegrationTest extends TestCase {
         for (Card.Brand brand : data.keySet()) {
             String[] cards = data.get(brand);
             for (String cardNumber : cards) {
-                assertTrue(Card.validate(cardNumber));
-                Card card = new Card(cardNumber);
+                assertTrue(Card.validateNumber(cardNumber));
+                Card card = createValidCard(brand, cardNumber);
                 assertTrue(card.isValid());
             }
         }
@@ -47,12 +47,17 @@ public class CardIntegrationTest extends TestCase {
         for (Card.Brand brand : data.keySet()) {
             String[] cards = data.get(brand);
             for (String cardNumber : cards) {
-                Card card = new Card(cardNumber);
+                Card card = createValidCard(brand, cardNumber);
                 assertEquals(brand, Card.Brand.lookup(cardNumber));
                 assertEquals(brand, card.getBrand());
             }
         }
     }
 
-
+    private Card createValidCard(Card.Brand brand, String cardNumber) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR) % 100 + 1;
+        int month = 1;
+        return new Card(cardNumber, brand.equals(Card.Brand.AMEX) ? "0000" : "000", month, year);
+    }
 }
