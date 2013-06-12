@@ -15,7 +15,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Simplify Android SDK" exported="" scope="PROVIDED" />
+    <orderEntry type="module" module-name="Simplify Android SDK" scope="PROVIDED" />
   </component>
 </module>
 

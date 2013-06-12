@@ -16,9 +16,28 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Simplify Android SDK App" exported="" scope="PROVIDED" />
-    <orderEntry type="module" module-name="Simplify Android SDK" exported="" scope="PROVIDED" />
-    <orderEntry type="library" exported="" name="android-junit-report-1.5.8" level="project" />
+    <orderEntry type="module" module-name="Simplify Android SDK App" />
+    <orderEntry type="module" module-name="Simplify Android SDK" />
+    <orderEntry type="library" name="android-junit-report-1.5.8" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/android-junit-report-1.5.8.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/commons-io-2.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/dexmaker-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/dexmaker-mockito-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mockito-all-1.9.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/robotium-solo-3.6.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MODULE_DIR$/libs/robotium-solo-3.6-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/libs/commons-io-2.4-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/mockito-all-1.9.5.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
