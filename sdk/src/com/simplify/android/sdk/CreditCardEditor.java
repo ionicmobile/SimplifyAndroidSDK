@@ -23,6 +23,9 @@ public class CreditCardEditor extends RelativeLayout {
                 put(Card.Brand.DISCOVER, R.drawable.brand_discover);
                 put(Card.Brand.MASTERCARD, R.drawable.brand_mastercard);
                 put(Card.Brand.VISA, R.drawable.brand_visa);
+                put(Card.Brand.DINERS_CLUB, R.drawable.brand_diners_club);
+                put(Card.Brand.CHINA_UNIONPAY, R.drawable.brand_china_union_pay);
+                put(Card.Brand.JCB, R.drawable.brand_jcb);
             }};
     private EditText ccEditorView;
     private EditText expMonth;

@@ -71,7 +71,7 @@ public class Card {
             return false;
         }
         Calendar expire = Calendar.getInstance();
-        expire.set(Calendar.MONTH, expirationMonth-1);
+        expire.set(Calendar.MONTH, expirationMonth - 1);
         expire.set(Calendar.YEAR, 2000 + expirationYear);
         expire.roll(Calendar.MONTH, 1);
         Calendar now = Calendar.getInstance();
@@ -107,18 +107,25 @@ public class Card {
     }
 
     public enum Brand {
-        VISA(16,3, "4"),
-        MASTERCARD(16,3, "51-55"),
-        DISCOVER(16,3, "65", "6011", "644-649"),
-        AMEX(15,4, "34", "37"),
-        /* DINERS_CLUB(16,3,"300-305", "36"),*/
-        /* CHINA_UNIONPAY(19,3, "62"),*/
+        VISA(16, 3, "4"),
+        MASTERCARD(16, 3, "51-55"),
+        DISCOVER(16, 3, "622126-622925", "65", "6011", "644-649"),
+        AMEX(15, 4, "34", "37"),
+        DINERS_CLUB(16, 3, "300-305", "36"),
+        CHINA_UNIONPAY(false, 19, 3, "62"),
+        JCB(16, 3, "3528-3589"),
         UNKNOWN(16, 3);
         private final String[] prefixes;
+        private boolean useLuhn;
         private final int length;
         private final int cvvLength;
 
         private Brand(int length, int cvvLength, String... prefixes) {
+            this(true, length, cvvLength, prefixes);
+        }
+
+        private Brand(boolean useLuhn, int length, int cvvLength, String... prefixes) {
+            this.useLuhn = useLuhn;
             this.length = length;
             this.cvvLength = cvvLength;
             this.prefixes = prefixes;
@@ -132,6 +139,10 @@ public class Card {
             return cvvLength;
         }
 
+        public boolean useLuhn() {
+            return useLuhn;
+        }
+
         public static Brand lookup(String cardNumber) {
             if (cardNumber == null || cardNumber.trim().length() == 0) {
                 return UNKNOWN;
@@ -142,7 +153,7 @@ public class Card {
                     int dash = prefix.indexOf('-');
                     if (dash > 0) {
                         int startValue = Integer.parseInt(prefix.substring(0, dash));
-                        int endValue = Integer.parseInt(prefix.substring(dash+1, prefix.length()));
+                        int endValue = Integer.parseInt(prefix.substring(dash + 1, prefix.length()));
                         for (int prefixValue = startValue; prefixValue <= endValue; prefixValue++) {
                             if (cardNumber.startsWith(String.valueOf(prefixValue))) {
                                 return brand;
