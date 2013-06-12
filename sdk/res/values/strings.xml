@@ -7,4 +7,5 @@
     <string name="cc_exp_year_hint">yy</string>
     <string name="three_digit_cvv_hint">000</string>
     <string name="four_digit_cvv_hint">0000</string>
+    <string name="cc_icon_description">Credit Card Icon</string>
 </resources>
