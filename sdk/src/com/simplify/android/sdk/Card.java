@@ -108,9 +108,11 @@ public class Card {
 
     public enum Brand {
         VISA(16,3, "4"),
-        MASTERCARD(16,3, "51", "52", "53", "54", "55"),
-        DISCOVER(16,3, "65", "6011", "644", "645", "646", "647", "648", "649"),
+        MASTERCARD(16,3, "51-55"),
+        DISCOVER(16,3, "65", "6011", "644-649"),
         AMEX(15,4, "34", "37"),
+        /* DINERS_CLUB(16,3,"300-305", "36"),*/
+        /* CHINA_UNIONPAY(19,3, "62"),*/
         UNKNOWN(16, 3);
         private final String[] prefixes;
         private final int length;
@@ -137,7 +139,16 @@ public class Card {
 
             for (Brand brand : values()) {
                 for (String prefix : brand.prefixes) {
-                    if (cardNumber.startsWith(prefix)) {
+                    int dash = prefix.indexOf('-');
+                    if (dash > 0) {
+                        int startValue = Integer.parseInt(prefix.substring(0, dash));
+                        int endValue = Integer.parseInt(prefix.substring(dash+1, prefix.length()));
+                        for (int prefixValue = startValue; prefixValue <= endValue; prefixValue++) {
+                            if (cardNumber.startsWith(String.valueOf(prefixValue))) {
+                                return brand;
+                            }
+                        }
+                    } else if (cardNumber.startsWith(prefix)) {
                         return brand;
                     }
                 }

@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="com.simplify:payments-sdk-java:1.0.0" type="repository">
+    <properties maven-id="com.simplify:payments-sdk-java:1.0.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/payments-sdk-java-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/httpclient-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/httpcore-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-codec-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/httpclient-cache-4.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/json-simple-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/nimbus-jose-jwt-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/bcprov-jdk15on-1.47.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jcip-annotations-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/json-smart-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
