@@ -3,6 +3,7 @@ package com.simplify.android.sdk;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -51,33 +52,26 @@ public class CreditCardEditor extends RelativeLayout {
     }
 
     private void init(Context context) {
+        createLayout(context);
+
         brandChangedListeners = new ArrayList<BrandChangedListener>();
-        threeDigitCvvHint = getResources().getString(R.string.three_digit_cvv_hint);
-        fourDigitCvvHint = getResources().getString(R.string.four_digit_cvv_hint);
+        threeDigitCvvHint = context.getResources().getString(R.string.three_digit_cvv_hint);
+        fourDigitCvvHint = context.getResources().getString(R.string.four_digit_cvv_hint);
 
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        layoutInflater.inflate(R.layout.cc_editor, this);
-
-        ccEditorView = (EditText) findViewById(R.id.cc_field);
         cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
         BrandChangedTextWatcher brandChangedWatcher = new BrandChangedTextWatcher(ccEditorView, new BrandChangedHandler());
         ccEditorView.addTextChangedListener(cardTextWatcher);
         ccEditorView.addTextChangedListener(brandChangedWatcher);
         ccEditorView.setNextFocusForwardId(R.id.cc_exp_month);
 
-        imageView = (ImageView) findViewById(R.id.cc_icon);
-
-        expMonth = (EditText) findViewById(R.id.cc_exp_month);
         FixedLengthTextWatcher expMonthWatcher = new IntegerValueTextWatcher(expMonth, 2, MIN_MONTH, MAX_MONTH);
         expMonth.addTextChangedListener(expMonthWatcher);
         expMonth.setNextFocusForwardId(R.id.cc_exp_year);
 
-        expYear = (EditText) findViewById(R.id.cc_exp_year);
         FixedLengthTextWatcher expYearWatcher = new FixedLengthTextWatcher(expYear, 2);
         expYear.addTextChangedListener(expYearWatcher);
         expYear.setNextFocusForwardId(R.id.cc_cvv);
 
-        cvv = (EditText) findViewById(R.id.cc_cvv);
         cvvWatcher = new FixedLengthTextWatcher(cvv, 3);
         cvv.addTextChangedListener(cvvWatcher);
 
@@ -99,6 +93,16 @@ public class CreditCardEditor extends RelativeLayout {
                 cvv.requestFocus();
             }
         });
+    }
+
+    private void createLayout(Context context) {
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(R.layout.cc_editor, this, true);
+        ccEditorView = (EditText) view.findViewById(R.id.cc_field);
+        imageView = (ImageView) view.findViewById(R.id.cc_icon);
+        expMonth = (EditText) view.findViewById(R.id.cc_exp_month);
+        expYear = (EditText) view.findViewById(R.id.cc_exp_year);
+        cvv = (EditText) view.findViewById(R.id.cc_cvv);
     }
 
     public void addBrandChangedListener(BrandChangedListener listener) {
@@ -139,6 +143,9 @@ public class CreditCardEditor extends RelativeLayout {
 
     private class BrandChangedHandler implements BrandChangedListener {
         public void brandChanged(View sourceView, Card.Brand brand) {
+            Log.e("SIMP", "###");
+            Log.e("SIMP", "### BrandChangedHandler::brandChanged - "+brand);
+            Log.e("SIMP", "###");
             cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
             cvvWatcher.setMaxFieldLength(brand.getCvvLength());
             cvv.setHint(brand.getCvvLength() == 4 ? fourDigitCvvHint : threeDigitCvvHint);

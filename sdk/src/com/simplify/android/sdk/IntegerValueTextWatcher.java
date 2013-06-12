@@ -1,6 +1,7 @@
 package com.simplify.android.sdk;
 
 import android.text.Editable;
+import android.util.Log;
 import android.widget.EditText;
 
 /**
@@ -16,6 +17,8 @@ public class IntegerValueTextWatcher extends FixedLengthTextWatcher {
 
     public IntegerValueTextWatcher(EditText watched, int maxFieldLength, int minValue, int maxValue) {
         super(watched, maxFieldLength);
+        Log.e("SIMP", "###    IntegerValueTextWatcher::IntegerValueTextWatcher");
+
         this.minValue = minValue;
         this.maxValue = maxValue;
     }

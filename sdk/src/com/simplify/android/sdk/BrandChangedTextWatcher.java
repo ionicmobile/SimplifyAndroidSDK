@@ -15,6 +15,8 @@ public class BrandChangedTextWatcher implements TextWatcher {
     private EditText view;
 
     public BrandChangedTextWatcher(EditText view, BrandChangedListener listener) {
+        Log.e("SIMP", "### BrandChangedTextWatcher::BrandChangedTextWatcher");
+
         this.view = view;
         this.listener = listener;
         this.brand = Card.Brand.UNKNOWN;
@@ -28,6 +30,10 @@ public class BrandChangedTextWatcher implements TextWatcher {
 
     public void afterTextChanged(Editable s) {
         Card.Brand brandInField = Card.Brand.lookup(s.toString());
+        Log.e("SIMP", "###");
+        Log.e("SIMP", "### BrandChangedTextWatcher::afterTextChanged - brandInField="+brandInField);
+        Log.e("SIMP", "### BrandChangedTextWatcher::afterTextChanged - brand="+brand);
+        Log.e("SIMP", "###");
         if (!brand.equals(brandInField)) {
             this.brand = brandInField;
             listener.brandChanged(view, brand);
