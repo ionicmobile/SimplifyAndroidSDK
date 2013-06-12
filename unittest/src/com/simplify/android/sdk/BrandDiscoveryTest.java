@@ -8,10 +8,47 @@ import junit.framework.TestCase;
  *         On: 6/7/13 at 9:32 PM
  */
 public class BrandDiscoveryTest extends TestCase {
+    public void testJCB() {
+        assertRange(3528, 3589, Card.Brand.JCB);
+
+        assertTrue(Card.Brand.JCB.useLuhn());
+        assertEquals(3, Card.Brand.DISCOVER.getCvvLength());
+        assertEquals(16, Card.Brand.DISCOVER.getMaxLength());
+    }
+
     public void testVisa() {
         assertEquals(Card.Brand.VISA, Card.Brand.lookup("4"));
         assertEquals(Card.Brand.VISA, Card.Brand.lookup("41"));
         assertEquals(Card.Brand.VISA, Card.Brand.lookup("411"));
+
+        assertTrue(Card.Brand.VISA.useLuhn());
+        assertEquals(3, Card.Brand.VISA.getCvvLength());
+        assertEquals(16, Card.Brand.VISA.getMaxLength());
+    }
+
+    public void testChinaUnionPay() {
+        assertEquals(Card.Brand.CHINA_UNIONPAY, Card.Brand.lookup("62"));
+        assertEquals(Card.Brand.CHINA_UNIONPAY, Card.Brand.lookup("621"));
+
+        assertFalse(Card.Brand.CHINA_UNIONPAY.useLuhn());
+        assertEquals(3, Card.Brand.CHINA_UNIONPAY.getCvvLength());
+        assertEquals(19, Card.Brand.CHINA_UNIONPAY.getMaxLength());
+    }
+
+    public void testDinersClub() {
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("36"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("361"));
+
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("300"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("301"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("302"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("303"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("304"));
+        assertEquals(Card.Brand.DINERS_CLUB, Card.Brand.lookup("305"));
+
+        assertTrue(Card.Brand.DINERS_CLUB.useLuhn());
+        assertEquals(3, Card.Brand.DINERS_CLUB.getCvvLength());
+        assertEquals(16, Card.Brand.DINERS_CLUB.getMaxLength());
     }
 
     public void testAmex() {
@@ -19,6 +56,10 @@ public class BrandDiscoveryTest extends TestCase {
         assertEquals(Card.Brand.AMEX, Card.Brand.lookup("341"));
         assertEquals(Card.Brand.AMEX, Card.Brand.lookup("37"));
         assertEquals(Card.Brand.AMEX, Card.Brand.lookup("371"));
+
+        assertTrue(Card.Brand.AMEX.useLuhn());
+        assertEquals(4, Card.Brand.AMEX.getCvvLength());
+        assertEquals(15, Card.Brand.AMEX.getMaxLength());
     }
 
     public void testMastercard() {
@@ -33,24 +74,28 @@ public class BrandDiscoveryTest extends TestCase {
         assertEquals(Card.Brand.MASTERCARD, Card.Brand.lookup("531"));
         assertEquals(Card.Brand.MASTERCARD, Card.Brand.lookup("541"));
         assertEquals(Card.Brand.MASTERCARD, Card.Brand.lookup("551"));
+
+        assertTrue(Card.Brand.MASTERCARD.useLuhn());
+        assertEquals(3, Card.Brand.MASTERCARD.getCvvLength());
+        assertEquals(16, Card.Brand.MASTERCARD.getMaxLength());
     }
 
     public void testDiscover() {
         assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("65"));
         assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6011111111111111"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("644"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("645"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("646"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("647"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("648"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("649"));
+        assertRange(644, 649, Card.Brand.DISCOVER);
+        assertRange(622126, 622925, Card.Brand.DISCOVER);
 
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("651"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6441"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6451"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6461"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6471"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6481"));
-        assertEquals(Card.Brand.DISCOVER, Card.Brand.lookup("6491"));
+        assertTrue(Card.Brand.DISCOVER.useLuhn());
+        assertEquals(3, Card.Brand.DISCOVER.getCvvLength());
+        assertEquals(16, Card.Brand.DISCOVER.getMaxLength());
+    }
+
+    private void assertRange(int min, int max, Card.Brand expected) {
+        for (int i = min; i <= max; i++) {
+            String prefix = String.valueOf(i);
+            assertEquals(expected, Card.Brand.lookup(prefix));
+            assertEquals(expected, Card.Brand.lookup(prefix + "123"));
+        }
     }
 }
