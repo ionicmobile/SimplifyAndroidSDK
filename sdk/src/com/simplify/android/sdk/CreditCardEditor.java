@@ -143,9 +143,6 @@ public class CreditCardEditor extends RelativeLayout {
 
     private class BrandChangedHandler implements BrandChangedListener {
         public void brandChanged(View sourceView, Card.Brand brand) {
-            Log.e("SIMP", "###");
-            Log.e("SIMP", "### BrandChangedHandler::brandChanged - "+brand);
-            Log.e("SIMP", "###");
             cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
             cvvWatcher.setMaxFieldLength(brand.getCvvLength());
             cvv.setHint(brand.getCvvLength() == 4 ? fourDigitCvvHint : threeDigitCvvHint);

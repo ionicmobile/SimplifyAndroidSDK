@@ -13,8 +13,6 @@ public class FixedLengthTextWatcher implements TextWatcher {
     private EntryCompleteListener entryCompleteListener;
 
     public FixedLengthTextWatcher(EditText watched, int maxFieldLength) {
-        Log.e("SIMP", "### FixedLengthTextWatcher::FixedLengthTextWatcher");
-
         this.watched = watched;
         this.maxFieldLength = maxFieldLength;
     }
@@ -38,11 +36,6 @@ public class FixedLengthTextWatcher implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        Log.e("SIMP", "###");
-        Log.e("SIMP", "### FixedLengthTextWatcher::afterTextChanged - id="+watched.getId());
-        Log.e("SIMP", "### FixedLengthTextWatcher::afterTextChanged - field="+s.length());
-        Log.e("SIMP", "### FixedLengthTextWatcher::afterTextChanged - max="+maxFieldLength);
-        Log.e("SIMP", "###");
         if (currentlyChanging) {
             return;
         }
