@@ -39,20 +39,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1e470-f576-43a0-b2d3-7d24ff759427" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/IntegerValueTextWatcher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-tvdpi/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-xhdpi/dimens.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_amex.png" afterPath="$PROJECT_DIR$/res/drawable/brand_amex.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_china_union_pay.png" afterPath="$PROJECT_DIR$/res/drawable/brand_china_union_pay.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_diners_club.png" afterPath="$PROJECT_DIR$/res/drawable/brand_diners_club.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_discover.png" afterPath="$PROJECT_DIR$/res/drawable/brand_discover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_jcb.png" afterPath="$PROJECT_DIR$/res/drawable/brand_jcb.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_mastercard.png" afterPath="$PROJECT_DIR$/res/drawable/brand_mastercard.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_unknown.png" afterPath="$PROJECT_DIR$/res/drawable/brand_unknown.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/drawable-nodpi/brand_visa.png" afterPath="$PROJECT_DIR$/res/drawable/brand_visa.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/cc_editor.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java" afterPath="$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -65,18 +54,19 @@
     <file path="/a.dummy" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370959949908" ignored="false" />
     <file path="/CreditCardTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963638519" ignored="false" />
     <file path="/CreditCardTextWatcherTest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961736347" ignored="false" />
-    <file path="/Dummy.txt" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370978392726" ignored="false" />
+    <file path="/Dummy.txt" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371046534480" ignored="false" />
     <file path="/CreditCardEditorViewTest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370960076318" ignored="false" />
     <file path="/BrandChangedListener.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370955355042" ignored="false" />
     <file path="/BrandChangedWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961139304" ignored="false" />
     <file path="$PROJECT_DIR$/../unittest/bin/AndroidManifest.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
     <file path="$PROJECT_DIR$/../unittest/bin/jarlist.cache" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
-    <file path="/CreditCardEditor.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370984444045" ignored="false" />
+    <file path="/CreditCardEditor.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371047888059" ignored="false" />
     <file path="/ids.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370974836704" ignored="false" />
     <file path="/strings.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370974662308" ignored="false" />
     <file path="/FixedLengthTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370979183622" ignored="false" />
     <file path="/IntegerValueTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370979461966" ignored="false" />
     <file path="/dimens.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370984080519" ignored="false" />
+    <file path="/cc_editor.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371048646735" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,37 +127,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreditCardEditor.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CreditCardEditor.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="62" selection-start="5065" selection-end="5065" vertical-scroll-proportion="0.0">
+            <state line="78" column="0" selection-start="3295" selection-end="3295" vertical-scroll-proportion="1.6105769">
               <folding>
-                <element signature="e#563#584#0" expanded="true" />
-                <element signature="e#6217#6413#0" expanded="true" />
-                <element signature="e#6402#6403#0" expanded="true" />
-                <element signature="e#6465#6660#0" expanded="true" />
-                <element signature="e#6649#6650#0" expanded="true" />
-                <element signature="e#6711#6902#0" expanded="true" />
-                <element signature="e#6891#6892#0" expanded="true" />
+                <element signature="e#599#620#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/values-tvdpi/dimens.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.03177966">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values-xhdpi/dimens.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="12" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -190,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditorView.java" />
         <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorViewTest.java" />
         <option value="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java" />
@@ -202,10 +167,11 @@
         <option value="$PROJECT_DIR$/res/values/ids.xml" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/FixedLengthTextWatcher.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/IntegerValueTextWatcher.java" />
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/res/values-xhdpi/dimens.xml" />
         <option value="$PROJECT_DIR$/res/values-tvdpi/dimens.xml" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
+        <option value="$PROJECT_DIR$/res/layout/cc_editor.xml" />
       </list>
     </option>
   </component>
@@ -246,7 +212,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,6 +298,10 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -364,14 +334,10 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,13 +355,13 @@
     <property name="project.structure.side.proportion" value="0.30011588" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/../unittest/libs" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -541,19 +507,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -579,6 +532,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -737,9 +703,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1553" height="1090" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32783505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956812" sideWeight="0.6718107" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -748,19 +714,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.50033176" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24950232" sideWeight="0.6718107" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24950232" sideWeight="0.672165" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32680413" sideWeight="0.4996682" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297943" sideWeight="0.6718107" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297943" sideWeight="0.6718107" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32886598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -846,24 +812,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1095" selection-end="1095" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -881,20 +835,6 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="43" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="26" selection-start="134" selection-end="134" vertical-scroll-proportion="0.048966266">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/ids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="42" selection-start="210" selection-end="210" vertical-scroll-proportion="0.08161045">
           <folding />
         </state>
       </provider>
@@ -936,25 +876,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+    <entry file="file://$PROJECT_DIR$/res/values-tvdpi/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="62" selection-start="5065" selection-end="5065" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#563#584#0" expanded="true" />
-            <element signature="e#6217#6413#0" expanded="true" />
-            <element signature="e#6402#6403#0" expanded="true" />
-            <element signature="e#6465#6660#0" expanded="true" />
-            <element signature="e#6649#6650#0" expanded="true" />
-            <element signature="e#6711#6902#0" expanded="true" />
-            <element signature="e#6891#6892#0" expanded="true" />
-          </folding>
+        <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values-tvdpi/dimens.xml">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.03177966">
+        <state line="6" column="18" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/cc_editor.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="43" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.85427135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="3295" selection-end="3295" vertical-scroll-proportion="1.6105769">
+          <folding>
+            <element signature="e#599#620#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

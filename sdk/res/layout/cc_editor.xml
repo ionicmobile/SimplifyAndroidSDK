@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@id/cc_icon"
+        android:contentDescription="@string/cc_icon_description"
+        android:src="@drawable/brand_unknown"
+        android:scaleType="fitCenter"
+        android:layout_alignBottom="@id/cc_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@id/cc_field"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:hint="@string/cc_field_hint"
+        android:paddingLeft="@dimen/edit_field_icon_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@id/cc_exp_month"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_alignLeft="@id/cc_field"
+        android:layout_below="@id/cc_field"
+        android:hint="@string/cc_exp_month_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@id/cc_exp_separator"
+        android:layout_alignBottom="@id/cc_exp_month"
+        android:layout_toRightOf="@id/cc_exp_month"
+        android:layout_below="@id/cc_field"
+        android:text="@string/slash"
+        android:textSize="@dimen/expiration_date_separator_text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@id/cc_exp_year"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_alignBottom="@id/cc_exp_month"
+        android:layout_toRightOf="@id/cc_exp_separator"
+        android:layout_below="@id/cc_field"
+        android:hint="@string/cc_exp_year_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@id/cc_cvv"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_below="@id/cc_field"
+        android:layout_alignRight="@id/cc_field"
+        android:hint="@string/three_digit_cvv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+
