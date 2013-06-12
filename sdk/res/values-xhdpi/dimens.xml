@@ -6,4 +6,6 @@
     <dimen name="icon_bottom_padding">6dp</dimen>
     <dimen name="slash_top_padding">0dp</dimen>
     <dimen name="slash_bottom_padding">6dp</dimen>
+    <dimen name="icon_left_padding">4dp</dimen>
+    <dimen name="icon_right_padding">4dp</dimen>
 </resources>

@@ -16,9 +16,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Simplify Android SDK App" scope="TEST" />
-    <orderEntry type="module" module-name="Simplify Android SDK" scope="TEST" />
-    <orderEntry type="library" name="android-junit-report-1.5.8" level="project" />
+    <orderEntry type="module" module-name="Simplify Android SDK App" exported="" scope="PROVIDED" />
+    <orderEntry type="module" module-name="Simplify Android SDK" exported="" scope="PROVIDED" />
+    <orderEntry type="library" exported="" name="android-junit-report-1.5.8" level="project" />
   </component>
 </module>
 

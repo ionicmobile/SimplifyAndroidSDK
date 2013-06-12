@@ -1,12 +1,11 @@
 package com.simplify.android.sdk;
 
 import android.content.Context;
-import android.content.res.Resources;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 
 import java.util.ArrayList;
@@ -30,7 +29,9 @@ public class CreditCardEditor extends RelativeLayout {
     private EditText expYear;
     private EditText cvv;
     private ImageView imageView;
+    private EntryCompleteFieldWatcher entryCompleteWatcher;
     private List<BrandChangedListener> brandChangedListeners;
+    private List<EntryCompleteListener> entryCompleteListeners;
     private FixedLengthTextWatcher cardTextWatcher;
     private FixedLengthTextWatcher cvvWatcher;
     private String threeDigitCvvHint;
@@ -54,45 +55,60 @@ public class CreditCardEditor extends RelativeLayout {
     private void init(Context context) {
         createLayout(context);
 
+        entryCompleteWatcher = new EntryCompleteFieldWatcher();
         brandChangedListeners = new ArrayList<BrandChangedListener>();
+        entryCompleteListeners = new ArrayList<EntryCompleteListener>();
         threeDigitCvvHint = context.getResources().getString(R.string.three_digit_cvv_hint);
         fourDigitCvvHint = context.getResources().getString(R.string.four_digit_cvv_hint);
 
         cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
-        BrandChangedTextWatcher brandChangedWatcher = new BrandChangedTextWatcher(ccEditorView, new BrandChangedHandler());
-        ccEditorView.addTextChangedListener(cardTextWatcher);
-        ccEditorView.addTextChangedListener(brandChangedWatcher);
-        ccEditorView.setNextFocusForwardId(R.id.cc_exp_month);
-
-        FixedLengthTextWatcher expMonthWatcher = new IntegerValueTextWatcher(expMonth, 2, MIN_MONTH, MAX_MONTH);
-        expMonth.addTextChangedListener(expMonthWatcher);
-        expMonth.setNextFocusForwardId(R.id.cc_exp_year);
-
-        FixedLengthTextWatcher expYearWatcher = new FixedLengthTextWatcher(expYear, 2);
-        expYear.addTextChangedListener(expYearWatcher);
-        expYear.setNextFocusForwardId(R.id.cc_cvv);
-
-        cvvWatcher = new FixedLengthTextWatcher(cvv, 3);
-        cvv.addTextChangedListener(cvvWatcher);
-
-        cardTextWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+        cardTextWatcher.setEntryCompleteListener(new EntryCompleteListener() {
             @Override
             public void entryComplete(View editorView) {
                 expMonth.requestFocus();
             }
+
+            @Override
+            public void entryIncomplete(View editorView) {}
         });
-        expMonthWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+        ccEditorView.addTextChangedListener(entryCompleteWatcher);
+        ccEditorView.addTextChangedListener(cardTextWatcher);
+        ccEditorView.addTextChangedListener(new BrandChangedTextWatcher(ccEditorView, new BrandChangedHandler()));
+        ccEditorView.setNextFocusForwardId(R.id.cc_exp_month);
+
+        IntegerValueTextWatcher exMonthWatcher = new IntegerValueTextWatcher(expMonth, 2, MIN_MONTH, MAX_MONTH);
+        exMonthWatcher.setEntryCompleteListener(new EntryCompleteListener() {
             @Override
             public void entryComplete(View editorView) {
                 expYear.requestFocus();
             }
+
+            @Override
+            public void entryIncomplete(View editorView) {
+            }
         });
-        expYearWatcher.setEntryCompleteListener(new FixedLengthTextWatcher.EntryCompleteListener() {
+        expMonth.addTextChangedListener(exMonthWatcher);
+        expMonth.addTextChangedListener(entryCompleteWatcher);
+        expMonth.setNextFocusForwardId(R.id.cc_exp_year);
+
+        FixedLengthTextWatcher expYearWatcher = new FixedLengthTextWatcher(expYear, 2);
+        expYearWatcher.setEntryCompleteListener(new EntryCompleteListener() {
             @Override
             public void entryComplete(View editorView) {
                 cvv.requestFocus();
             }
+
+            @Override
+            public void entryIncomplete(View editorView) {
+            }
         });
+        expYear.addTextChangedListener(expYearWatcher);
+        expYear.addTextChangedListener(entryCompleteWatcher);
+        expYear.setNextFocusForwardId(R.id.cc_cvv);
+
+        cvvWatcher = new FixedLengthTextWatcher(cvv, 3);
+        cvv.addTextChangedListener(entryCompleteWatcher);
+        cvv.addTextChangedListener(cvvWatcher);
     }
 
     private void createLayout(Context context) {
@@ -105,40 +121,53 @@ public class CreditCardEditor extends RelativeLayout {
         cvv = (EditText) view.findViewById(R.id.cc_cvv);
     }
 
+    public Card getCard() {
+        return new Card(ccEditorView.getText().toString(),
+                cvv.getText().toString(),
+                toInt(expMonth.getText().toString()),
+                toInt(expYear.getText().toString()));
+    }
+
+    private int toInt(String strValue) {
+        int value = 0;
+        try {
+            value = Integer.parseInt(strValue);
+        } catch (NumberFormatException e) {}
+        return value;
+    }
+
+    public void setCard(Card card) {
+        ccEditorView.setText(card.getNumber());
+        cvv.setText(card.getCvv());
+        expMonth.setText(String.format("%02d", card.getExpirationMonth()));
+        expYear.setText(String.format("%02d", card.getExpirationYear()));
+    }
+
     public void addBrandChangedListener(BrandChangedListener listener) {
         brandChangedListeners.add(listener);
     }
 
-    public String getCardNumber() {
-        return ccEditorView.getText().toString();
+    public void addEntryCompleteListener(EntryCompleteListener listener) {
+        this.entryCompleteListeners.add(listener);
     }
 
-    public void setCardNumber(String cardNumber) {
-        ccEditorView.setText(cardNumber);
+
+    private void fireBrandChange(Card.Brand brand) {
+        for (BrandChangedListener brandChangedListener : brandChangedListeners) {
+            brandChangedListener.brandChanged(this, brand);
+        }
     }
 
-    public String getExpirationMonth() {
-        return expMonth.getText().toString();
+    private void fireIncomplete() {
+        for (EntryCompleteListener listener : entryCompleteListeners) {
+            listener.entryIncomplete(this);
+        }
     }
 
-    public void setExpMonth(String month) {
-        expMonth.setText(month);
-    }
-
-    public String getExpirationYear() {
-        return expYear.getText().toString();
-    }
-
-    public void setExpYear(String year) {
-        expYear.setText(year);
-    }
-
-    public String getCvv() {
-        return cvv.getText().toString();
-    }
-
-    public void setCvv(String cvvValue) {
-        cvv.setText(cvvValue);
+    private void fireComplete() {
+        for (EntryCompleteListener listener : entryCompleteListeners) {
+            listener.entryComplete(this);
+        }
     }
 
     private class BrandChangedHandler implements BrandChangedListener {
@@ -147,8 +176,24 @@ public class CreditCardEditor extends RelativeLayout {
             cvvWatcher.setMaxFieldLength(brand.getCvvLength());
             cvv.setHint(brand.getCvvLength() == 4 ? fourDigitCvvHint : threeDigitCvvHint);
             imageView.setImageResource(brandToImageResourceMap.get(brand));
-            for (BrandChangedListener brandChangedListener : brandChangedListeners) {
-                brandChangedListener.brandChanged(CreditCardEditor.this, brand);
+            fireBrandChange(brand);
+        }
+    }
+
+    private class EntryCompleteFieldWatcher implements TextWatcher {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            Card card = getCard();
+            if (card.isValid()) {
+                fireComplete();
+            } else {
+                fireIncomplete();
             }
         }
     }
