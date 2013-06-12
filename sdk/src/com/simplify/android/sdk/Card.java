@@ -67,6 +67,9 @@ public class Card {
     }
 
     private boolean withinExpiration() {
+        if (expirationMonth < 1 || expirationMonth > 12) {
+            return false;
+        }
         Calendar expire = Calendar.getInstance();
         expire.set(Calendar.MONTH, expirationMonth-1);
         expire.set(Calendar.YEAR, 2000 + expirationYear);

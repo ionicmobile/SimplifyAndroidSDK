@@ -8,6 +8,10 @@
         android:contentDescription="@string/cc_icon_description"
         android:src="@drawable/brand_unknown"
         android:scaleType="fitCenter"
+        android:paddingLeft="@dimen/icon_left_padding"
+        android:paddingRight="@dimen/icon_right_padding"
+        android:paddingTop="@dimen/icon_top_padding"
+        android:paddingBottom="@dimen/icon_bottom_padding"
         android:layout_alignBottom="@id/cc_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

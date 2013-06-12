@@ -2,8 +2,6 @@ package com.simplify.android.sdk;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 
 public class FixedLengthTextWatcher implements TextWatcher {
@@ -48,11 +46,17 @@ public class FixedLengthTextWatcher implements TextWatcher {
 
         if (shouldFireCompleted(watched.getText())) {
             entryCompleteListener.entryComplete(watched);
+        } else if (shouldFireIncomplete(watched.getText())) {
+            entryCompleteListener.entryIncomplete(watched);
         }
     }
 
     protected boolean shouldFireCompleted(Editable text) {
         return entryCompleteListener != null && text.length() == maxFieldLength;
+    }
+
+    protected boolean shouldFireIncomplete(Editable text) {
+        return entryCompleteListener != null && text.length() < maxFieldLength;
     }
 
     private void setTextPreservingCursorLocation(Editable s) {
@@ -64,7 +68,4 @@ public class FixedLengthTextWatcher implements TextWatcher {
         watched.setSelection(selection);
     }
 
-    public interface EntryCompleteListener {
-        void entryComplete(View editorView);
-    }
 }
