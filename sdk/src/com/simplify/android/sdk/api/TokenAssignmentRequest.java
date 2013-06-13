@@ -17,7 +17,7 @@ import java.util.HashMap;
 * Time: 2:45 PM
 * To change this template use File | Settings | File Templates.
 */
-public class TokenAssignmentRequest extends AsyncTask<Card, Void, HashMap> {
+public class TokenAssignmentRequest extends AsyncTask<Card, Void, CardToken> {
     private TokenAssignmentListener listener;
 
     public TokenAssignmentRequest(TokenAssignmentListener listener) {
@@ -25,16 +25,16 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, HashMap> {
     }
 
     @Override
-    protected HashMap doInBackground(Card... params) {
+    protected CardToken doInBackground(Card... params) {
         String urlStr = "https://sandbox.simplify.com/v1/api/payment/cardToken?key=sbpb_OTY1YmI4N2UtYTJiOS00ZWUzLTliMGItZTFmYzQ2OTRmYmQ3&card.number=4111111111111111&card.cvc=123&card.expMonth=10&card.expYear=16";
-        HashMap map = null;
+        CardToken map = null;
         try {
             HttpClient httpclient = new DefaultHttpClient();
             HttpGet httpget = new HttpGet(urlStr);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             String responseBody = httpclient.execute(httpget, responseHandler);
             Gson gson = new Gson();
-            map = gson.fromJson(responseBody, HashMap.class);
+            map = gson.fromJson(responseBody, CardToken.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, HashMap> {
     }
 
     @Override
-    protected void onPostExecute(HashMap cardToken) {
+    protected void onPostExecute(CardToken cardToken) {
         listener.tokenAssigned(cardToken);
     }
 }

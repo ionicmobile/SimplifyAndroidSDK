@@ -10,5 +10,5 @@ import java.util.HashMap;
 * To change this template use File | Settings | File Templates.
 */
 public interface TokenAssignmentListener {
-    void tokenAssigned(HashMap token);
+    void tokenAssigned(CardToken token);
 }
