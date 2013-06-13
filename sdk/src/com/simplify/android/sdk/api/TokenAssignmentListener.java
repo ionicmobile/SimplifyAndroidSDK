@@ -9,6 +9,6 @@ import java.util.HashMap;
 * Time: 2:46 PM
 * To change this template use File | Settings | File Templates.
 */
-public interface TokenAssignmentListener {
+public interface TokenAssignmentListener extends ErrorHandling {
     void tokenAssigned(CardToken token);
 }

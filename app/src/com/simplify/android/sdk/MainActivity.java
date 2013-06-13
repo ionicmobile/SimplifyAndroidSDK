@@ -45,7 +45,13 @@ public class MainActivity extends Activity {
         if (cardEditor.getCard().requestToken(new TokenAssignmentListener() {
             @Override
             public void tokenAssigned(CardToken token) {
-                Log.e("SIMP", String.valueOf(token.getId()));
+                Log.e("SIMP", "### Response - "+ String.valueOf(token.getId()));
+            }
+
+            @Override
+            public void handleError(int statusCode, String message) {
+                Log.e("SIMP", "### Error Code: "+statusCode);
+                Log.e("SIMP", "### Error Message: "+message);
             }
         })) {
             Toast.makeText(this, "Sure thing, boss", 2000).show();
