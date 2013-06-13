@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
+import com.simplify.android.sdk.api.Card;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 public class CreditCardEditor extends RelativeLayout {
-    public static final int MIN_MONTH = 1;
-    public static final int MAX_MONTH = 12;
-    private Map<Card.Brand, Integer> brandToImageResourceMap =
+    private static final int MIN_MONTH = 1;
+    private static final int MAX_MONTH = 12;
+    private final Map<Card.Brand, Integer> brandToImageResourceMap =
             new HashMap<Card.Brand, Integer>() {{
                 put(Card.Brand.UNKNOWN, R.drawable.brand_unknown);
                 put(Card.Brand.AMEX, R.drawable.brand_amex);
@@ -32,7 +33,6 @@ public class CreditCardEditor extends RelativeLayout {
     private EditText expYear;
     private EditText cvv;
     private ImageView imageView;
-    private EntryCompleteFieldWatcher entryCompleteWatcher;
     private List<BrandChangedListener> brandChangedListeners;
     private List<EntryCompleteListener> entryCompleteListeners;
     private FixedLengthTextWatcher cardTextWatcher;
@@ -58,7 +58,7 @@ public class CreditCardEditor extends RelativeLayout {
     private void init(Context context) {
         createLayout(context);
 
-        entryCompleteWatcher = new EntryCompleteFieldWatcher();
+        EntryCompleteFieldWatcher entryCompleteWatcher = new EntryCompleteFieldWatcher();
         brandChangedListeners = new ArrayList<BrandChangedListener>();
         entryCompleteListeners = new ArrayList<EntryCompleteListener>();
         threeDigitCvvHint = context.getResources().getString(R.string.three_digit_cvv_hint);
@@ -124,7 +124,7 @@ public class CreditCardEditor extends RelativeLayout {
         cvv = (EditText) view.findViewById(R.id.cc_cvv);
     }
 
-    public Card getCard() {
+    Card getCard() {
         return new Card(ccEditorView.getText().toString(),
                 cvv.getText().toString(),
                 toInt(expMonth.getText().toString()),
@@ -135,7 +135,7 @@ public class CreditCardEditor extends RelativeLayout {
         int value = 0;
         try {
             value = Integer.parseInt(strValue);
-        } catch (NumberFormatException e) {}
+        } catch (NumberFormatException ignored) {}
         return value;
     }
 

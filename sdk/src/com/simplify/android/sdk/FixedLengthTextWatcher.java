@@ -4,10 +4,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-public class FixedLengthTextWatcher implements TextWatcher {
+class FixedLengthTextWatcher implements TextWatcher {
     private int maxFieldLength = 16;
     private boolean currentlyChanging = false;
-    private EditText watched;
+    private final EditText watched;
     private EntryCompleteListener entryCompleteListener;
 
     public FixedLengthTextWatcher(EditText watched, int maxFieldLength) {
@@ -51,11 +51,11 @@ public class FixedLengthTextWatcher implements TextWatcher {
         }
     }
 
-    protected boolean shouldFireCompleted(Editable text) {
+    boolean shouldFireCompleted(Editable text) {
         return entryCompleteListener != null && text.length() == maxFieldLength;
     }
 
-    protected boolean shouldFireIncomplete(Editable text) {
+    boolean shouldFireIncomplete(Editable text) {
         return entryCompleteListener != null && text.length() < maxFieldLength;
     }
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="expiration_date_separator_text_size">20dp</dimen>
-    <dimen name="slash_top_padding">0dp</dimen>
-    <dimen name="slash_bottom_padding">6dp</dimen>
 
     <dimen name="edit_field_icon_space">40dp</dimen>
     <dimen name="icon_left_padding">4dp</dimen>

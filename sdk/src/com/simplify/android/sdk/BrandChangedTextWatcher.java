@@ -2,17 +2,17 @@ package com.simplify.android.sdk;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
+import com.simplify.android.sdk.api.Card;
 
 /**
  * @author Paul S. Hawke (paul.hawke@gmail.com)
  *         On: 6/11/13 at 2:12 AM
  */
-public class BrandChangedTextWatcher implements TextWatcher {
+class BrandChangedTextWatcher implements TextWatcher {
     private Card.Brand brand;
-    private BrandChangedListener listener;
-    private EditText view;
+    private final BrandChangedListener listener;
+    private final EditText view;
 
     public BrandChangedTextWatcher(EditText view, BrandChangedListener listener) {
         this.view = view;

@@ -11,9 +11,9 @@ import android.widget.EditText;
  * Time: 2:33 PM
  * To change this template use File | Settings | File Templates.
  */
-public class IntegerValueTextWatcher extends FixedLengthTextWatcher {
-    private int minValue;
-    private int maxValue;
+class IntegerValueTextWatcher extends FixedLengthTextWatcher {
+    private final int minValue;
+    private final int maxValue;
 
     public IntegerValueTextWatcher(EditText watched, int maxFieldLength, int minValue, int maxValue) {
         super(watched, maxFieldLength);
@@ -29,7 +29,7 @@ public class IntegerValueTextWatcher extends FixedLengthTextWatcher {
                 if (value >= minValue && value <= maxValue) {
                     return true;
                 }
-            } catch (NumberFormatException nfe){}
+            } catch (NumberFormatException ignored){}
         }
         return false;
     }

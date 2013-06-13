@@ -1,6 +1,6 @@
 package com.simplify.android.sdk;
 
-import com.simplify.android.sdk.Card;
+import com.simplify.android.sdk.api.Card;
 import junit.framework.TestCase;
 
 /**

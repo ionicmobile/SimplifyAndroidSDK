@@ -2,6 +2,7 @@ package com.simplify.android.sdk;
 
 import android.test.AndroidTestCase;
 import android.view.View;
+import com.simplify.android.sdk.api.Card;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;

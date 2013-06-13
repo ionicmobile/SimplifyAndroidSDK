@@ -1,6 +1,7 @@
 package com.simplify.android.sdk;
 
 import android.view.View;
+import com.simplify.android.sdk.api.Card;
 
 /**
 * @author Paul S. Hawke (paul.hawke@gmail.com)

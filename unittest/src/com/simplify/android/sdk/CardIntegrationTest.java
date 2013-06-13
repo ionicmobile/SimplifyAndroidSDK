@@ -1,5 +1,6 @@
 package com.simplify.android.sdk;
 
+import com.simplify.android.sdk.api.Card;
 import junit.framework.TestCase;
 
 import java.util.Calendar;

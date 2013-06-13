@@ -1,4 +1,4 @@
-package com.simplify.android.sdk;
+package com.simplify.android.sdk.api;
 
 import java.util.Calendar;
 
@@ -116,7 +116,7 @@ public class Card {
         JCB(16, 3, "3528-3589"),
         UNKNOWN(16, 3);
         private final String[] prefixes;
-        private boolean useLuhn;
+        private final boolean useLuhn;
         private final int length;
         private final int cvvLength;
 
