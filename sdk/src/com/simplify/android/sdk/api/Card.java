@@ -167,4 +167,15 @@ public class Card {
             return UNKNOWN;
         }
     }
+
+    public boolean requestToken(TokenAssignmentListener listener) {
+        if (!isValid()) {
+            return false;
+        }
+
+        TokenAssignmentRequest request = new TokenAssignmentRequest(listener);
+        request.execute(this);
+        return true;
+    }
+
 }
