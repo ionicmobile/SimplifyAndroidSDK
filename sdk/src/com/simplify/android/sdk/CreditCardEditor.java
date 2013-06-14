@@ -31,14 +31,14 @@ public class CreditCardEditor extends RelativeLayout {
     private EditText ccEditorView;
     private EditText expMonth;
     private EditText expYear;
-    private EditText cvv;
+    private EditText cvc;
     private ImageView imageView;
     private List<BrandChangedListener> brandChangedListeners;
     private List<EntryCompleteListener> entryCompleteListeners;
     private FixedLengthTextWatcher cardTextWatcher;
-    private FixedLengthTextWatcher cvvWatcher;
-    private String threeDigitCvvHint;
-    private String fourDigitCvvHint;
+    private FixedLengthTextWatcher cvcWatcher;
+    private String threeDigitCvcHint;
+    private String fourDigitCvcHint;
 
     public CreditCardEditor(Context context) {
         super(context);
@@ -61,8 +61,8 @@ public class CreditCardEditor extends RelativeLayout {
         EntryCompleteFieldWatcher entryCompleteWatcher = new EntryCompleteFieldWatcher();
         brandChangedListeners = new ArrayList<BrandChangedListener>();
         entryCompleteListeners = new ArrayList<EntryCompleteListener>();
-        threeDigitCvvHint = context.getResources().getString(R.string.three_digit_cvv_hint);
-        fourDigitCvvHint = context.getResources().getString(R.string.four_digit_cvv_hint);
+        threeDigitCvcHint = context.getResources().getString(R.string.three_digit_cvc_hint);
+        fourDigitCvcHint = context.getResources().getString(R.string.four_digit_cvc_hint);
 
         cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
         cardTextWatcher.setEntryCompleteListener(new EntryCompleteListener() {
@@ -98,7 +98,7 @@ public class CreditCardEditor extends RelativeLayout {
         expYearWatcher.setEntryCompleteListener(new EntryCompleteListener() {
             @Override
             public void entryComplete(View editorView) {
-                cvv.requestFocus();
+                cvc.requestFocus();
             }
 
             @Override
@@ -107,11 +107,11 @@ public class CreditCardEditor extends RelativeLayout {
         });
         expYear.addTextChangedListener(expYearWatcher);
         expYear.addTextChangedListener(entryCompleteWatcher);
-        expYear.setNextFocusForwardId(R.id.cc_cvv);
+        expYear.setNextFocusForwardId(R.id.cc_cvc);
 
-        cvvWatcher = new FixedLengthTextWatcher(cvv, 3);
-        cvv.addTextChangedListener(entryCompleteWatcher);
-        cvv.addTextChangedListener(cvvWatcher);
+        cvcWatcher = new FixedLengthTextWatcher(cvc, 3);
+        cvc.addTextChangedListener(entryCompleteWatcher);
+        cvc.addTextChangedListener(cvcWatcher);
     }
 
     private void createLayout(Context context) {
@@ -121,12 +121,12 @@ public class CreditCardEditor extends RelativeLayout {
         imageView = (ImageView) view.findViewById(R.id.cc_icon);
         expMonth = (EditText) view.findViewById(R.id.cc_exp_month);
         expYear = (EditText) view.findViewById(R.id.cc_exp_year);
-        cvv = (EditText) view.findViewById(R.id.cc_cvv);
+        cvc = (EditText) view.findViewById(R.id.cc_cvc);
     }
 
     Card getCard() {
         return new Card(ccEditorView.getText().toString(),
-                cvv.getText().toString(),
+                cvc.getText().toString(),
                 toInt(expMonth.getText().toString()),
                 toInt(expYear.getText().toString()));
     }
@@ -141,7 +141,7 @@ public class CreditCardEditor extends RelativeLayout {
 
     public void setCard(Card card) {
         ccEditorView.setText(card.getNumber());
-        cvv.setText(card.getCvv());
+        cvc.setText(card.getCvc());
         expMonth.setText(String.format("%02d", card.getExpirationMonth()));
         expYear.setText(String.format("%02d", card.getExpirationYear()));
     }
@@ -176,8 +176,8 @@ public class CreditCardEditor extends RelativeLayout {
     private class BrandChangedHandler implements BrandChangedListener {
         public void brandChanged(View sourceView, Card.Brand brand) {
             cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
-            cvvWatcher.setMaxFieldLength(brand.getCvvLength());
-            cvv.setHint(brand.getCvvLength() == 4 ? fourDigitCvvHint : threeDigitCvvHint);
+            cvcWatcher.setMaxFieldLength(brand.getCvcLength());
+            cvc.setHint(brand.getCvcLength() == 4 ? fourDigitCvcHint : threeDigitCvcHint);
             imageView.setImageResource(brandToImageResourceMap.get(brand));
             fireBrandChange(brand);
         }

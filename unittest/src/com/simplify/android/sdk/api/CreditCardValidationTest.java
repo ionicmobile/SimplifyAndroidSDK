@@ -23,16 +23,16 @@ public class CreditCardValidationTest extends TestCase {
         assertTrue(card.isValid());
     }
 
-    public void testValidCardNumberWithInvalidCvv() {
+    public void testValidCardNumberWithInvalidCvc() {
         Card card = createValidCard("4111111111111111", "");
         assertFalse(card.isValid());
     }
 
-    public void testAmexCvvIsValidWithFourDigits() {
+    public void testAmexCvcIsValidWithFourDigits() {
         Card card = createValidCard("378282246310005", "1234");
         assertTrue(card.isValid());
 
-        card.setCvv("123");
+        card.setCvc("123");
         assertFalse(card.isValid());
     }
 
@@ -69,10 +69,10 @@ public class CreditCardValidationTest extends TestCase {
         assertFalse(card.isValid());
     }
 
-    private Card createValidCard(String cardNumber, String cvv) {
+    private Card createValidCard(String cardNumber, String cvc) {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR) % 100 + 1;
         // Card set to expire January next year
-        return new Card(cardNumber, cvv, 1, year);
+        return new Card(cardNumber, cvc, 1, year);
     }
 }

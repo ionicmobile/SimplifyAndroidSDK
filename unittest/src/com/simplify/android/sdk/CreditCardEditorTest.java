@@ -67,7 +67,7 @@ public class CreditCardEditorTest extends AndroidTestCase {
         verify(entryCompleteListener, atLeastOnce()).entryIncomplete(any(View.class));
     }
 
-    public void testCreditCardEntryIncompleteEvent_CVV() {
+    public void testCreditCardEntryIncompleteEvent_CVC() {
         CreditCardEditor view = new CreditCardEditor(getContext());
         view.addEntryCompleteListener(entryCompleteListener);
 

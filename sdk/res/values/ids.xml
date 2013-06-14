@@ -5,5 +5,5 @@
     <item type="id" name="cc_exp_month"/>
     <item type="id" name="cc_exp_separator"/>
     <item type="id" name="cc_exp_year"/>
-    <item type="id" name="cc_cvv"/>
+    <item type="id" name="cc_cvc"/>
 </resources>

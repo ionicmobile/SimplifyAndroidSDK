@@ -40,7 +40,7 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, CardToken> {
                     .addPath("/payment/cardToken")
                     .addParam("key", API_KEY)
                     .addParam("card.number", params[0].getNumber())
-                    .addParam("card.cvc", params[0].getCvv())
+                    .addParam("card.cvc", params[0].getCvc())
                     .addParam("card.expMonth", "" + params[0].getExpirationMonth())
                     .addParam("card.expYear", "" + params[0].getExpirationYear()).build();
 

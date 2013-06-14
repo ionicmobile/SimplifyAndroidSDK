@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class Card {
     private Brand brand = Brand.UNKNOWN;
     private String number;
-    private String cvv;
+    private String cvc;
     private int expirationMonth;
     private int expirationYear;
 
@@ -17,9 +17,9 @@ public class Card {
         this("", "", 0, 0);
     }
 
-    public Card(String number, String cvv, int expirationMonth, int expirationYear) {
+    public Card(String number, String cvc, int expirationMonth, int expirationYear) {
         setNumber(number);
-        setCvv(cvv);
+        setCvc(cvc);
         setExpirationMonth(expirationMonth);
         setExpirationYear(expirationYear);
     }
@@ -33,12 +33,12 @@ public class Card {
         this.brand = Brand.lookup(number);
     }
 
-    public String getCvv() {
-        return cvv;
+    public String getCvc() {
+        return cvc;
     }
 
-    public void setCvv(String cvv) {
-        this.cvv = cvv;
+    public void setCvc(String cvc) {
+        this.cvc = cvc;
     }
 
     public int getExpirationMonth() {
@@ -63,7 +63,7 @@ public class Card {
 
     public boolean isValid() {
         return number != null && number.length() <= brand.getMaxLength() && validateNumber(number) &&
-                cvv != null && cvv.length() == brand.getCvvLength() && withinExpiration();
+                cvc != null && cvc.length() == brand.getCvcLength() && withinExpiration();
     }
 
     private boolean withinExpiration() {
@@ -118,16 +118,16 @@ public class Card {
         private final String[] prefixes;
         private final boolean useLuhn;
         private final int length;
-        private final int cvvLength;
+        private final int cvcLength;
 
-        private Brand(int length, int cvvLength, String... prefixes) {
-            this(true, length, cvvLength, prefixes);
+        private Brand(int length, int cvcLength, String... prefixes) {
+            this(true, length, cvcLength, prefixes);
         }
 
-        private Brand(boolean useLuhn, int length, int cvvLength, String... prefixes) {
+        private Brand(boolean useLuhn, int length, int cvcLength, String... prefixes) {
             this.useLuhn = useLuhn;
             this.length = length;
-            this.cvvLength = cvvLength;
+            this.cvcLength = cvcLength;
             this.prefixes = prefixes;
         }
 
@@ -135,8 +135,8 @@ public class Card {
             return length;
         }
 
-        public int getCvvLength() {
-            return cvvLength;
+        public int getCvcLength() {
+            return cvcLength;
         }
 
         public boolean useLuhn() {

@@ -62,13 +62,13 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@id/cc_cvv"
+        android:id="@id/cc_cvc"
         android:imeOptions="actionNext"
         android:inputType="number"
         android:singleLine="true"
         android:layout_below="@id/cc_field"
         android:layout_alignRight="@id/cc_field"
-        android:hint="@string/three_digit_cvv_hint"
+        android:hint="@string/three_digit_cvc_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
