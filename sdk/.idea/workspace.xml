@@ -42,34 +42,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1e470-f576-43a0-b2d3-7d24ff759427" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/ApiConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/AsyncApiRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/Payment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardTokenRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentReceipt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentReceivedListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/BasicCardDetails.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/BasicCardDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/Card.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/Card.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/CardToken.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/CardToken.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/TokenAssignmentListener.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/TokenAssignmentListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/TokenAssignmentRequest.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/TokenAssignmentRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedListener.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/BrandChangedTextWatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/BrandDiscoveryTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/BrandDiscoveryTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/CardIntegrationTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/CardIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/attrs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/CreditCardValidationTest.java" afterPath="$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/CreditCardValidationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/EntryCompleteListener.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/EntryCompleteListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/simplify/android/sdk/IntegerValueTextWatcher.java" afterPath="$PROJECT_DIR$/src/com/simplify/android/sdk/IntegerValueTextWatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java" afterPath="$PROJECT_DIR$/../app/src/com/simplify/android/sdk/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/res/layout/main.xml" afterPath="$PROJECT_DIR$/../app/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Simplify Android SDK.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370975076778" ignored="false" />
-    <file path="/main.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371063310344" ignored="false" />
+    <file path="/main.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371239120764" ignored="false" />
     <file path="/CreditCardEditorView.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961536255" ignored="false" />
     <file path="/fragment.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371234710117" ignored="false" />
     <file path="/a.dummy" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371224859553" ignored="false" />
@@ -81,7 +62,7 @@
     <file path="/BrandChangedWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370961139304" ignored="false" />
     <file path="$PROJECT_DIR$/../unittest/bin/AndroidManifest.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
     <file path="$PROJECT_DIR$/../unittest/bin/jarlist.cache" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370963428234" ignored="false" />
-    <file path="/CreditCardEditor.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371073445680" ignored="false" />
+    <file path="/CreditCardEditor.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371238964008" ignored="false" />
     <file path="/ids.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370974836704" ignored="false" />
     <file path="/strings.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1370974662308" ignored="false" />
     <file path="/FixedLengthTextWatcher.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371054732788" ignored="false" />
@@ -105,6 +86,7 @@
     <file path="/PaymentRequest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371235425097" ignored="false" />
     <file path="/PaymentByCardTokenRequest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371235483083" ignored="false" />
     <file path="/ApiRequest.java" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371235675820" ignored="false" />
+    <file path="/attrs.xml" changelist="f5e1e470-f576-43a0-b2d3-7d24ff759427" time="1371238573547" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +148,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CreditCardEditor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="47" selection-start="2519" selection-end="2519" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#777#798#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../app/res/layout/main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="34" selection-start="640" selection-end="640" vertical-scroll-proportion="0.41811848">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Payment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/Payment.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -180,7 +185,7 @@
       <file leaf-file-name="PaymentByCardRequest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="110" selection-start="248" selection-end="311" vertical-scroll-proportion="0.0">
+            <state line="6" column="110" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -195,10 +200,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncApiRequest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AsyncApiRequest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/AsyncApiRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="28" selection-start="282" selection-end="282" vertical-scroll-proportion="0.09983361">
+            <state line="8" column="83" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,35 +213,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/ApiConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentReceivedListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentReceivedListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/card/Card.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="0" selection-start="4699" selection-end="4893" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="class#Brand#0;class#Card#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentReceipt.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentReceipt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -280,10 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/PaymentReceipt.java" />
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/PaymentReceivedListener.java" />
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/Card.java" />
-        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/PaymentRequest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/PaymentByCardTokenRequest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/PaymentByCardRequest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/Payment.java" />
@@ -296,6 +268,10 @@
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardTokenRequest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/ApiRequest.java" />
         <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/api/AsyncApiRequest.java" />
+        <option value="$PROJECT_DIR$/res/values/attr.xml" />
+        <option value="$PROJECT_DIR$/res/values/attrs.xml" />
+        <option value="$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java" />
+        <option value="$PROJECT_DIR$/../app/res/layout/main.xml" />
       </list>
     </option>
   </component>
@@ -464,19 +440,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="payment" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,19 +454,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="card" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,11 +482,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simplify Android SDK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sdk" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -837,10 +807,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1553" height="1090" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32783505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32783505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956812" sideWeight="0.6718107" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -859,7 +830,6 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297943" sideWeight="0.6718107" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297943" sideWeight="0.6718107" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956812" sideWeight="0.6718107" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -930,34 +900,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/BrandDiscoveryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="47" selection-start="3826" selection-end="3826" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/CreditCardValidationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="19" selection-start="2104" selection-end="2104" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/api/UrlBuilderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="33" selection-start="2669" selection-end="2669" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardEditorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="51" selection-start="2631" selection-end="2631" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../unittest/src/com/simplify/android/sdk/CreditCardTextWatcherTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
@@ -1018,13 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="110" selection-start="248" selection-end="311" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardTokenRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="36" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
@@ -1041,9 +976,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/payment/PaymentByCardRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="110" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Tools/android-sdk-macosx/sources/android-14/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="443" column="32" selection-start="17126" selection-end="17126" vertical-scroll-proportion="0.5607321">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/api/AsyncApiRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="282" selection-end="282" vertical-scroll-proportion="0.09983361">
+        <state line="8" column="83" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="45" selection-start="96" selection-end="96" vertical-scroll-proportion="0.049916804">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/simplify/android/sdk/CreditCardEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="47" selection-start="2519" selection-end="2519" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#777#798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="34" selection-start="640" selection-end="640" vertical-scroll-proportion="0.41811848">
           <folding />
         </state>
       </provider>

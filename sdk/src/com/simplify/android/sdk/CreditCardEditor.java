@@ -1,9 +1,11 @@
 package com.simplify.android.sdk;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -41,24 +43,36 @@ public class CreditCardEditor extends RelativeLayout {
     private FixedLengthTextWatcher cvcWatcher;
     private String threeDigitCvcHint;
     private String fourDigitCvcHint;
+    private boolean showAddress;
 
     public CreditCardEditor(Context context) {
         super(context);
-        init(context);
+        init(context, null);
     }
 
     public CreditCardEditor(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        init(context, attrs);
     }
 
     public CreditCardEditor(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(context);
+        init(context, attrs);
     }
 
-    private void init(Context context) {
+    private void init(Context context, AttributeSet attrs) {
         createLayout(context);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CreditCardEditor, 0, 0);
+        try {
+            showAddress = a.getBoolean(R.styleable.CreditCardEditor_showAddress, false);
+            Log.e("SIMP", "###");
+            Log.e("SIMP", "###");
+            Log.e("SIMP", "### SHOW ADDRESS ATTR === "+showAddress);
+            Log.e("SIMP", "###");
+            Log.e("SIMP", "###");
+        } finally {
+            a.recycle();
+        }
 
         EntryCompleteFieldWatcher entryCompleteWatcher = new EntryCompleteFieldWatcher();
         brandChangedListeners = new ArrayList<BrandChangedListener>();
