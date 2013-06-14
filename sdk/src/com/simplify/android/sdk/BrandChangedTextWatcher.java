@@ -3,7 +3,7 @@ package com.simplify.android.sdk;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-import com.simplify.android.sdk.api.Card;
+import com.simplify.android.sdk.api.card.Card;
 
 /**
  * @author Paul S. Hawke (paul.hawke@gmail.com)

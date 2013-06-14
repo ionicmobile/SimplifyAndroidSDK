@@ -6,11 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.simplify.android.sdk.api.CardToken;
-import com.simplify.android.sdk.api.TokenAssignmentListener;
-import com.simplify.android.sdk.api.TokenAssignmentRequest;
-
-import java.util.HashMap;
+import com.simplify.android.sdk.api.card.CardToken;
+import com.simplify.android.sdk.api.card.TokenAssignmentListener;
 
 public class MainActivity extends Activity {
 

@@ -1,4 +1,4 @@
-package com.simplify.android.sdk.api;
+package com.simplify.android.sdk.api.card;
 
 /**
  * {

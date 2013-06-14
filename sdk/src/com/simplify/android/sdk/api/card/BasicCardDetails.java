@@ -1,12 +1,12 @@
-package com.simplify.android.sdk.api;
+package com.simplify.android.sdk.api.card;
 
 /**
-* Created with IntelliJ IDEA.
-* User: paul.hawke
-* Date: 6/14/13
-* Time: 11:15 AM
-* To change this template use File | Settings | File Templates.
-*/
+ * Created with IntelliJ IDEA.
+ * User: paul.hawke
+ * Date: 6/14/13
+ * Time: 11:15 AM
+ * To change this template use File | Settings | File Templates.
+ */
 public class BasicCardDetails {
     protected String id;
     protected String number;

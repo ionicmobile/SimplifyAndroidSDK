@@ -6,8 +6,10 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.*;
-import com.simplify.android.sdk.api.Card;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import com.simplify.android.sdk.api.card.Card;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,7 +74,8 @@ public class CreditCardEditor extends RelativeLayout {
             }
 
             @Override
-            public void entryIncomplete(View editorView) {}
+            public void entryIncomplete(View editorView) {
+            }
         });
         ccEditorView.addTextChangedListener(entryCompleteWatcher);
         ccEditorView.addTextChangedListener(cardTextWatcher);
@@ -135,7 +138,8 @@ public class CreditCardEditor extends RelativeLayout {
         int value = 0;
         try {
             value = Integer.parseInt(strValue);
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+        }
         return value;
     }
 
@@ -185,10 +189,12 @@ public class CreditCardEditor extends RelativeLayout {
 
     private class EntryCompleteFieldWatcher implements TextWatcher {
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
 
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
 
         @Override
         public void afterTextChanged(Editable s) {

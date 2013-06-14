@@ -1,7 +1,6 @@
 package com.simplify.android.sdk;
 
 import android.text.Editable;
-import android.util.Log;
 import android.widget.EditText;
 
 /**
@@ -29,7 +28,8 @@ class IntegerValueTextWatcher extends FixedLengthTextWatcher {
                 if (value >= minValue && value <= maxValue) {
                     return true;
                 }
-            } catch (NumberFormatException ignored){}
+            } catch (NumberFormatException ignored) {
+            }
         }
         return false;
     }
