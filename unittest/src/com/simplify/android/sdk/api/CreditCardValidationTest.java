@@ -54,7 +54,7 @@ public class CreditCardValidationTest extends TestCase {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR) % 100 - 1;
         Card card = createValidCard("4111111111111111", "000");
-        card.setExpirationYear(year);
+        card.setExpYear(year);
         assertFalse(card.isValid());
     }
 
@@ -64,8 +64,8 @@ public class CreditCardValidationTest extends TestCase {
         int year = calendar.get(Calendar.YEAR) % 100;
         int month = calendar.get(Calendar.MONTH) + 1;
         Card card = createValidCard("4111111111111111", "000");
-        card.setExpirationYear(year);
-        card.setExpirationMonth(month);
+        card.setExpYear(year);
+        card.setExpMonth(month);
         assertFalse(card.isValid());
     }
 

@@ -6,12 +6,9 @@ import java.util.Calendar;
  * @author Paul S. Hawke (paul.hawke@gmail.com)
  *         On: 6/7/13 at 8:59 PM
  */
-public class Card {
+public class Card extends BasicCardDetails {
+    private String id;
     private Brand brand = Brand.UNKNOWN;
-    private String number;
-    private String cvc;
-    private int expirationMonth;
-    private int expirationYear;
 
     public Card() {
         this("", "", 0, 0);
@@ -20,8 +17,16 @@ public class Card {
     public Card(String number, String cvc, int expirationMonth, int expirationYear) {
         setNumber(number);
         setCvc(cvc);
-        setExpirationMonth(expirationMonth);
-        setExpirationYear(expirationYear);
+        setExpMonth(expirationMonth);
+        setExpYear(expirationYear);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNumber() {
@@ -29,36 +34,16 @@ public class Card {
     }
 
     public void setNumber(String number) {
-        this.number = number;
-        this.brand = Brand.lookup(number);
-    }
-
-    public String getCvc() {
-        return cvc;
-    }
-
-    public void setCvc(String cvc) {
-        this.cvc = cvc;
-    }
-
-    public int getExpirationMonth() {
-        return expirationMonth;
-    }
-
-    public void setExpirationMonth(int expirationMonth) {
-        this.expirationMonth = expirationMonth;
-    }
-
-    public int getExpirationYear() {
-        return expirationYear;
-    }
-
-    public void setExpirationYear(int expirationYear) {
-        this.expirationYear = expirationYear;
+        super.setNumber(number);
+        setBrand(Brand.lookup(number));
     }
 
     public Brand getBrand() {
         return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
     public boolean isValid() {
@@ -67,12 +52,12 @@ public class Card {
     }
 
     private boolean withinExpiration() {
-        if (expirationMonth < 1 || expirationMonth > 12) {
+        if (expMonth < 1 || expMonth > 12) {
             return false;
         }
         Calendar expire = Calendar.getInstance();
-        expire.set(Calendar.MONTH, expirationMonth - 1);
-        expire.set(Calendar.YEAR, 2000 + expirationYear);
+        expire.set(Calendar.MONTH, expMonth - 1);
+        expire.set(Calendar.YEAR, 2000 + expYear);
         expire.roll(Calendar.MONTH, 1);
         Calendar now = Calendar.getInstance();
         return now.before(expire);

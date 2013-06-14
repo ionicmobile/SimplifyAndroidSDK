@@ -41,4 +41,11 @@ public class UrlBuilder {
         params.add(new BasicNameValuePair(key, value));
         return this;
     }
+
+    public UrlBuilder addOptionalParam(String key, String value) {
+        if (value != null) {
+            params.add(new BasicNameValuePair(key, value));
+        }
+        return this;
+    }
 }

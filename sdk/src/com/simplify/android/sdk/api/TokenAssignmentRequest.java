@@ -41,10 +41,18 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, CardToken> {
                     .addParam("key", API_KEY)
                     .addParam("card.number", params[0].getNumber())
                     .addParam("card.cvc", params[0].getCvc())
-                    .addParam("card.expMonth", "" + params[0].getExpirationMonth())
-                    .addParam("card.expYear", "" + params[0].getExpirationYear()).build();
+                    .addParam("card.expMonth", "" + params[0].getExpMonth())
+                    .addParam("card.expYear", "" + params[0].getExpYear())
+                    .addOptionalParam("card.addressCity", "" + params[0].getAddressCity())
+                    .addOptionalParam("card.addressCountry", "" + params[0].getAddressCountry())
+                    .addOptionalParam("card.addressLine1", "" + params[0].getAddressLine1())
+                    .addOptionalParam("card.addressLine2", "" + params[0].getAddressLine2())
+                    .addOptionalParam("card.addressState", "" + params[0].getAddressState())
+                    .addOptionalParam("card.addressZip", "" + params[0].getAddressCity())
+                    .addOptionalParam("card.name", "" + params[0].getName())
+                    .build();
 
-            token = doGet(urlStr, CardToken.class);
+            token = doGet(urlStr);
         } catch (HttpResponseException e) {
             statusCode = e.getStatusCode();
             message = e.getMessage();
@@ -52,13 +60,12 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, CardToken> {
         return token;
     }
 
-    private CardToken doGet(String urlStr, Class<CardToken> returnValueType) throws HttpResponseException {
+    private CardToken doGet(String urlStr) throws HttpResponseException {
         HttpClient httpclient = new DefaultHttpClient();
         try {
             HttpGet httpget = new HttpGet(urlStr);
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            return gson.fromJson(responseBody, returnValueType);
+            String responseBody = httpclient.execute(httpget, new BasicResponseHandler());
+            return gson.fromJson(responseBody, CardToken.class);
         } catch (IOException e) {
             return null;
         } catch (JsonSyntaxException e) {

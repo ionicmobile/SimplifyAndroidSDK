@@ -142,8 +142,8 @@ public class CreditCardEditor extends RelativeLayout {
     public void setCard(Card card) {
         ccEditorView.setText(card.getNumber());
         cvc.setText(card.getCvc());
-        expMonth.setText(String.format("%02d", card.getExpirationMonth()));
-        expYear.setText(String.format("%02d", card.getExpirationYear()));
+        expMonth.setText(String.format("%02d", card.getExpMonth()));
+        expYear.setText(String.format("%02d", card.getExpYear()));
     }
 
     public void addBrandChangedListener(BrandChangedListener listener) {
