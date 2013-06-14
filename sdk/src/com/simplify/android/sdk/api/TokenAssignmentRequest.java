@@ -1,8 +1,8 @@
 package com.simplify.android.sdk.api;
 
 import android.os.AsyncTask;
-import android.util.Log;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.HttpResponseException;
 import org.apache.http.client.ResponseHandler;
@@ -10,7 +10,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import java.util.HashMap;
+import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,26 +35,37 @@ public class TokenAssignmentRequest extends AsyncTask<Card, Void, CardToken> {
     @Override
     protected CardToken doInBackground(Card... params) {
         CardToken token = null;
-        HttpClient httpclient = new DefaultHttpClient();
         try {
-            HttpGet httpget = new HttpGet(URL_BASE + "/payment/cardToken?" +
-                    "key=" + API_KEY +
-                    "&card.number=" + params[0].getNumber() +
-                    "&card.cvc=" + params[0].getCvv() +
-                    "&card.expMonth=" + params[0].getExpirationMonth() +
-                    "&card.expYear=" + params[0].getExpirationYear());
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            token = gson.fromJson(responseBody, CardToken.class);
+            String urlStr = new UrlBuilder(URL_BASE)
+                    .addPath("/payment/cardToken")
+                    .addParam("key", API_KEY)
+                    .addParam("card.number", params[0].getNumber())
+                    .addParam("card.cvc", params[0].getCvv())
+                    .addParam("card.expMonth", "" + params[0].getExpirationMonth())
+                    .addParam("card.expYear", "" + params[0].getExpirationYear()).build();
+
+            token = doGet(urlStr, CardToken.class);
         } catch (HttpResponseException e) {
             statusCode = e.getStatusCode();
             message = e.getMessage();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }
+        return token;
+    }
+
+    private CardToken doGet(String urlStr, Class<CardToken> returnValueType) throws HttpResponseException {
+        HttpClient httpclient = new DefaultHttpClient();
+        try {
+            HttpGet httpget = new HttpGet(urlStr);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            String responseBody = httpclient.execute(httpget, responseHandler);
+            return gson.fromJson(responseBody, returnValueType);
+        } catch (IOException e) {
+            return null;
+        } catch (JsonSyntaxException e) {
+            return null;
         } finally {
             httpclient.getConnectionManager().shutdown();
         }
-        return token;
     }
 
     @Override
