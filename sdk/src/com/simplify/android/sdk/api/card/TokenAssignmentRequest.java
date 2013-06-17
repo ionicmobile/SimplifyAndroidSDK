@@ -12,6 +12,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
 
+/**
+ * Used by a <code>Card</code> to makes an asynchronous call to the <strong>Simplify.com</strong>
+ * API to request a <code>CardToken</code>, returning it to application code via a listener interface.
+ *
+ * @see com.simplify.android.sdk.api.card.Card
+ * @see com.simplify.android.sdk.api.card.CardToken
+ */
 public class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssignmentListener> {
 
     public TokenAssignmentRequest(TokenAssignmentListener listener) {

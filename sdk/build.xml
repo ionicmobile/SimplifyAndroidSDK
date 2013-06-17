@@ -68,6 +68,12 @@
     -->
     <import file="custom_rules.xml" optional="true"/>
 
+    <target name="javadoc">
+        <mkdir dir="doc" />
+        <delete dir="doc/**/*.*" />
+        <javadoc sourcepath="${source.dir}" destdir="doc" />
+    </target>
+
     <!-- Import the actual build file.
 
          To customize existing targets, there are two options:

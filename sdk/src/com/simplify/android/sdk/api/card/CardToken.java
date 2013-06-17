@@ -1,19 +1,9 @@
 package com.simplify.android.sdk.api.card;
 
 /**
- * {
- * id=acd21bde-cc06-4023-9ee6-acfddaef2976,
- * used=false,
- * card={
- * id=EnKBX8,
- * type=VISA,
- * last4=1111,
- * expMonth=10.0,
- * expYear=16.0,
- * dateCreated=1.371153542826E12
- * }
- * }
+ * Model a credit card token, to expose the <strong>Simplify.com</strong> API.
  */
+
 public class CardToken {
     private String id;
     private boolean used;

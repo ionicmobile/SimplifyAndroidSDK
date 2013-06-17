@@ -1,11 +1,11 @@
 package com.simplify.android.sdk.api.card;
 
 /**
- * Created with IntelliJ IDEA.
- * User: paul.hawke
- * Date: 6/14/13
- * Time: 11:15 AM
- * To change this template use File | Settings | File Templates.
+ * Basic representation of data associated with a credit-card, as used in the <code>Card</code> and
+ * <code>CardToken</code> objects.
+ *
+ * @see com.simplify.android.sdk.api.card.Card
+ * @see com.simplify.android.sdk.api.card.CardToken
  */
 public class BasicCardDetails {
     protected String id;

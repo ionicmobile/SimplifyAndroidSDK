@@ -6,6 +6,15 @@ import com.simplify.android.sdk.api.ErrorHandling;
 import com.simplify.android.sdk.api.card.CardToken;
 import org.apache.http.client.HttpResponseException;
 
+/**
+ * Basis for making an asynchronous calls to the <strong>Simplify.com</strong> API.  Derived <code>Request</code> objects
+ * need to be able to make the specific server calls, and map the return value to a call on the callback
+ * listener interface.
+ *
+ * @param <I> The input type holding parameters for the <strong>Simplify.com</strong> call
+ * @param <V> The return value, coming back from the <strong>Simplify.com</strong> call
+ * @param <L> The callback listener interface
+ */
 public abstract class AsyncApiRequest<I,V,L extends ErrorHandling> extends AsyncTask<I, Void, V> {
     protected final L listener;
     protected final Gson gson;

@@ -4,8 +4,9 @@ import android.view.View;
 import com.simplify.android.sdk.api.card.Card;
 
 /**
- * @author Paul S. Hawke (paul.hawke@gmail.com)
- *         On: 6/11/13 at 2:13 AM
+ * Notified when the <code>Brand</code> associated with the card number being entered
+ * has changed.
+ * @see com.simplify.android.sdk.api.card.Card
  */
 public interface BrandChangedListener {
     void brandChanged(View sourceView, Card.Brand brand);

@@ -4,6 +4,9 @@ import com.simplify.android.sdk.api.card.BasicCardDetails;
 import com.simplify.android.sdk.api.card.Card;
 import com.simplify.android.sdk.api.card.CardToken;
 
+/**
+ * Model a credit card payment, to expose the <strong>Simplify.com</strong> API.
+ */
 public class Payment {
     private long amount;
     private String currency;
@@ -73,6 +76,12 @@ public class Payment {
         return amount > 0;
     }
 
+    /**
+     * Make a payment, using the given <code>Card</code>.
+     * @param card the card to charge
+     * @param listener callback interface, for the resulting payment receipt
+     * @return <code>true</code> if the asynchronous call was started.
+     */
     public boolean submitPayment(Card card, PaymentReceivedListener listener) {
         this.token = null;
         this.card = card;
@@ -86,6 +95,12 @@ public class Payment {
         return true;
     }
 
+    /**
+     * Make a payment, using the given <code>CardToken</code>.
+     * @param token a <code>CardToken</code> representing the card to charge
+     * @param listener callback interface, for the resulting payment receipt
+     * @return <code>true</code> if the asynchronous call was started.
+     */
     public boolean submitPayment(CardToken token, PaymentReceivedListener listener) {
         this.token = token.getId();
         this.card = null;

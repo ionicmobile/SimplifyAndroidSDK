@@ -19,6 +19,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * <p></p>Android UI component for entering credit card and address details, per the <strong>Simplify.com</strong>
+ * API spec.</p>
+ * <p>To use the card editor, incorporate it into your application's layout XML:<pre>
+ &lt;?xml version="1.0" encoding="utf-8"?&gt;
+ &nbsp;&nbsp;&lt;LinearLayout
+ &nbsp;&nbsp;&nbsp;&nbsp;xmlns:android="http://schemas.android.com/apk/res/android"
+ &nbsp;&nbsp;&nbsp;&nbsp;xmlns:simplify="http://schemas.android.com/apk/res/com.simplify.android.sdk"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:orientation="vertical"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="fill_parent"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="fill_parent"&gt;
+
+ <i></strong>&nbsp;&nbsp;&lt;com.simplify.android.sdk.CreditCardEditor
+ &nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/credit_card"
+ &nbsp;&nbsp;&nbsp;&nbsp;simplify:showAddress="true"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:layout_gravity="center_horizontal"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="wrap_content"
+ &nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content" /&gt;</i>
+
+ &lt;/LinearLayout&gt;
+ * </pre></p>
+ * <p>The <i>showAddress</i> parameter can be either <code>true</code> or <code>false</code> to
+ * indicate whether address editing fields should appear in the GUI.</p>
+ * <p>The credit card editor component will fire complete/incomplete events as is values are
+ * edited and return a <code>Card</code> object for use with <strong>Simplify.com</strong> API calls.
+ * The component will also fire brand change events.</p>
+ */
 public class CreditCardEditor extends RelativeLayout {
     private static final int MIN_MONTH = 1;
     private static final int MAX_MONTH = 12;
@@ -159,7 +186,7 @@ public class CreditCardEditor extends RelativeLayout {
         addressCountry = (EditText)view.findViewById(R.id.cc_address_country);
     }
 
-    Card getCard() {
+    public Card getCard() {
         Card card = new Card(ccEditorView.getText().toString(),
                 cvc.getText().toString(),
                 toInt(expMonth.getText().toString()),

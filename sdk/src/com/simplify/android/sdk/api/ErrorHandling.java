@@ -1,11 +1,8 @@
 package com.simplify.android.sdk.api;
 
 /**
- * Created with IntelliJ IDEA.
- * User: paul.hawke
- * Date: 6/13/13
- * Time: 4:24 PM
- * To change this template use File | Settings | File Templates.
+ * All listener interfaces must extend <code>ErrorHandling</code> to provide feedback
+ * when asynchronous calls to the <strong>Simplify.com</strong> API fail in some way.
  */
 public interface ErrorHandling {
     void handleError(int statusCode, String message);
