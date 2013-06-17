@@ -72,5 +72,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:id="@id/cc_address_fields"
+        android:layout_alignLeft="@id/cc_field"
+        android:layout_alignRight="@id/cc_field"
+        android:layout_below="@id/cc_cvc"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@id/cc_address_name"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="@string/cc_name_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@id/cc_address_line1"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="@string/cc_line1_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@id/cc_address_line2"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="@string/cc_line2_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@id/cc_address_city"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="@string/cc_city_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@id/cc_address_state"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:hint="@string/cc_state_hint"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@id/cc_address_zip"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:inputType="number"
+                android:hint="@string/cc_zip_hint"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@id/cc_address_country"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:hint="@string/cc_country_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 </RelativeLayout>
 

@@ -6,7 +6,7 @@ import com.simplify.android.sdk.api.ErrorHandling;
 import com.simplify.android.sdk.api.card.CardToken;
 import org.apache.http.client.HttpResponseException;
 
-public abstract class AsyncApiRequest<I,T,V,L extends ErrorHandling> extends AsyncTask<I, T, V> {
+public abstract class AsyncApiRequest<I,V,L extends ErrorHandling> extends AsyncTask<I, Void, V> {
     protected final L listener;
     protected final Gson gson;
     protected int statusCode;
