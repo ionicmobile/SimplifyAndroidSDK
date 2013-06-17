@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import com.simplify.android.sdk.api.card.Card;
 
@@ -36,11 +37,19 @@ public class CreditCardEditor extends RelativeLayout {
     private EditText expMonth;
     private EditText expYear;
     private EditText cvc;
+    private EditText addressName;
+    private EditText addressLine1;
+    private EditText addressLine2;
+    private EditText addressCity;
+    private EditText addressState;
+    private EditText addressZip;
+    private EditText addressCountry;
     private ImageView imageView;
     private List<BrandChangedListener> brandChangedListeners;
     private List<EntryCompleteListener> entryCompleteListeners;
     private FixedLengthTextWatcher cardTextWatcher;
     private FixedLengthTextWatcher cvcWatcher;
+    private FixedLengthTextWatcher zipWatcher;
     private String threeDigitCvcHint;
     private String fourDigitCvcHint;
     private boolean showAddress;
@@ -61,18 +70,14 @@ public class CreditCardEditor extends RelativeLayout {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        createLayout(context);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CreditCardEditor, 0, 0);
         try {
             showAddress = a.getBoolean(R.styleable.CreditCardEditor_showAddress, false);
-            Log.e("SIMP", "###");
-            Log.e("SIMP", "###");
-            Log.e("SIMP", "### SHOW ADDRESS ATTR === "+showAddress);
-            Log.e("SIMP", "###");
-            Log.e("SIMP", "###");
         } finally {
             a.recycle();
         }
+
+        createLayout(context, showAddress);
 
         EntryCompleteFieldWatcher entryCompleteWatcher = new EntryCompleteFieldWatcher();
         brandChangedListeners = new ArrayList<BrandChangedListener>();
@@ -129,23 +134,46 @@ public class CreditCardEditor extends RelativeLayout {
         cvcWatcher = new FixedLengthTextWatcher(cvc, 3);
         cvc.addTextChangedListener(entryCompleteWatcher);
         cvc.addTextChangedListener(cvcWatcher);
+
+        zipWatcher = new FixedLengthTextWatcher(addressZip, 5);
     }
 
-    private void createLayout(Context context) {
+    private void createLayout(Context context, boolean showAddress) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.cc_editor, this, true);
+        LinearLayout ccAddressView = (LinearLayout) view.findViewById(R.id.cc_address_fields);
+        ccAddressView.setVisibility(showAddress ? View.VISIBLE : View.GONE);
+
         ccEditorView = (EditText) view.findViewById(R.id.cc_field);
         imageView = (ImageView) view.findViewById(R.id.cc_icon);
         expMonth = (EditText) view.findViewById(R.id.cc_exp_month);
         expYear = (EditText) view.findViewById(R.id.cc_exp_year);
         cvc = (EditText) view.findViewById(R.id.cc_cvc);
+
+        addressName = (EditText)view.findViewById(R.id.cc_address_name);
+        addressLine1 = (EditText)view.findViewById(R.id.cc_address_line1);
+        addressLine2 = (EditText)view.findViewById(R.id.cc_address_line2);
+        addressCity = (EditText)view.findViewById(R.id.cc_address_city);
+        addressState = (EditText)view.findViewById(R.id.cc_address_state);
+        addressZip = (EditText)view.findViewById(R.id.cc_address_zip);
+        addressCountry = (EditText)view.findViewById(R.id.cc_address_country);
     }
 
     Card getCard() {
-        return new Card(ccEditorView.getText().toString(),
+        Card card = new Card(ccEditorView.getText().toString(),
                 cvc.getText().toString(),
                 toInt(expMonth.getText().toString()),
                 toInt(expYear.getText().toString()));
+        if (showAddress) {
+            card.setName(addressName.getText().toString());
+            card.setAddressLine1(addressLine1.getText().toString());
+            card.setAddressLine2(addressLine2.getText().toString());
+            card.setAddressCity(addressCity.getText().toString());
+            card.setAddressState(addressState.getText().toString());
+            card.setAddressZip(addressZip.getText().toString());
+            card.setAddressCountry(addressCountry.getText().toString());
+        }
+        return card;
     }
 
     private int toInt(String strValue) {

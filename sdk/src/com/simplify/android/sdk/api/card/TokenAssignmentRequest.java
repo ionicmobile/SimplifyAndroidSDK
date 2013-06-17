@@ -12,7 +12,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.IOException;
 
-public class TokenAssignmentRequest extends AsyncApiRequest<Card, Void, CardToken, TokenAssignmentListener> {
+public class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssignmentListener> {
 
     public TokenAssignmentRequest(TokenAssignmentListener listener) {
         super(listener);
@@ -20,7 +20,9 @@ public class TokenAssignmentRequest extends AsyncApiRequest<Card, Void, CardToke
 
     @Override
     protected CardToken callServer(Card... params) throws HttpResponseException {
-        String urlStr = new UrlBuilder(ApiConstants.URL_BASE)
+        HttpClient httpclient = new DefaultHttpClient();
+        try {
+            HttpGet httpget = new HttpGet(new UrlBuilder(ApiConstants.URL_BASE)
                     .addPath("/payment/cardToken")
                     .addParam("key", ApiConstants.API_KEY)
                     .addParam("card.number", params[0].getNumber())
@@ -34,20 +36,7 @@ public class TokenAssignmentRequest extends AsyncApiRequest<Card, Void, CardToke
                     .addOptionalParam("card.addressState", "" + params[0].getAddressState())
                     .addOptionalParam("card.addressZip", "" + params[0].getAddressCity())
                     .addOptionalParam("card.name", "" + params[0].getName())
-                    .build();
-
-        return doGet(urlStr);
-    }
-
-    @Override
-    protected void notifyDataReceived(TokenAssignmentListener listener, CardToken returnData) {
-        listener.tokenAssigned(returnData);
-    }
-
-    private CardToken doGet(String urlStr) throws HttpResponseException {
-        HttpClient httpclient = new DefaultHttpClient();
-        try {
-            HttpGet httpget = new HttpGet(urlStr);
+                    .build());
             String responseBody = httpclient.execute(httpget, new BasicResponseHandler());
             return gson.fromJson(responseBody, CardToken.class);
         } catch (IOException e) {
@@ -58,4 +47,10 @@ public class TokenAssignmentRequest extends AsyncApiRequest<Card, Void, CardToke
             httpclient.getConnectionManager().shutdown();
         }
     }
+
+    @Override
+    protected void notifyDataReceived(TokenAssignmentListener listener, CardToken returnData) {
+        listener.tokenAssigned(returnData);
+    }
+
 }
