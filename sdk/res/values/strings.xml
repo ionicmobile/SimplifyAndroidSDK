@@ -7,4 +7,12 @@
     <string name="three_digit_cvc_hint">000</string>
     <string name="four_digit_cvc_hint">0000</string>
     <string name="cc_icon_description">Credit Card Icon</string>
+    <string name="cc_name_hint">Name</string>
+    <string name="cc_line1_hint">Address Line 1</string>
+    <string name="cc_line2_hint">Address Line 2</string>
+    <string name="cc_city_hint">City</string>
+    <string name="cc_state_hint">State</string>
+    <string name="cc_zip_hint">Zip</string>
+    <string name="cc_address_label">Address</string>
+    <string name="cc_country_hint">Country</string>
 </resources>

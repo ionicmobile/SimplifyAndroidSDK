@@ -6,4 +6,14 @@
     <item type="id" name="cc_exp_separator"/>
     <item type="id" name="cc_exp_year"/>
     <item type="id" name="cc_cvc"/>
+
+    <item type="id" name="cc_address_fields"/>
+    <item type="id" name="cc_address_name"/>
+    <item type="id" name="cc_address_line1"/>
+    <item type="id" name="cc_address_line2"/>
+    <item type="id" name="cc_address_city"/>
+    <item type="id" name="cc_address_state"/>
+    <item type="id" name="cc_address_zip"/>
+    <item type="id" name="cc_address_country"/>
+
 </resources>
