@@ -19,7 +19,7 @@ import java.io.IOException;
  * @see com.simplify.android.sdk.api.card.Card
  * @see com.simplify.android.sdk.api.card.CardToken
  */
-public class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssignmentListener> {
+class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssignmentListener> {
 
     public TokenAssignmentRequest(TokenAssignmentListener listener) {
         super(listener);

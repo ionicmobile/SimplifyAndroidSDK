@@ -2,8 +2,6 @@ package com.simplify.android.sdk.api;
 
 import android.os.AsyncTask;
 import com.google.gson.Gson;
-import com.simplify.android.sdk.api.ErrorHandling;
-import com.simplify.android.sdk.api.card.CardToken;
 import org.apache.http.client.HttpResponseException;
 
 /**
@@ -15,7 +13,7 @@ import org.apache.http.client.HttpResponseException;
  * @param <V> The return value, coming back from the <strong>Simplify.com</strong> call
  * @param <L> The callback listener interface
  */
-public abstract class AsyncApiRequest<I,V,L extends ErrorHandling> extends AsyncTask<I, Void, V> {
+public abstract class AsyncApiRequest<I,V,L extends ErrorHandler> extends AsyncTask<I, Void, V> {
     protected final L listener;
     protected final Gson gson;
     protected int statusCode;

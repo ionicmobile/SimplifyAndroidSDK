@@ -7,10 +7,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Paul S. Hawke (paul.hawke@gmail.com)
- *         On: 6/8/13 at 2:45 PM
- */
 public class CardIntegrationTest extends TestCase {
     Map<Card.Brand, String[]> data = new HashMap<Card.Brand, String[]>() {{
         put(Card.Brand.VISA, new String[]{

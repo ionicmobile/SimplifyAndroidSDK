@@ -5,10 +5,6 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import com.simplify.android.sdk.api.card.Card;
 
-/**
- * @author Paul S. Hawke (paul.hawke@gmail.com)
- *         On: 6/11/13 at 2:12 AM
- */
 class BrandChangedTextWatcher implements TextWatcher {
     private Card.Brand brand;
     private final BrandChangedListener listener;

@@ -11,7 +11,7 @@ import org.apache.http.client.HttpResponseException;
  * @see com.simplify.android.sdk.api.card.Card
  * @see com.simplify.android.sdk.api.payment.Payment
  */
-public class PaymentByCardRequest extends AsyncApiRequest<Card, PaymentReceipt, PaymentReceivedListener> {
+class PaymentByCardRequest extends AsyncApiRequest<Card, PaymentReceipt, PaymentReceivedListener> {
 
     public PaymentByCardRequest(PaymentReceivedListener listener) {
         super(listener);

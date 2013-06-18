@@ -3,10 +3,6 @@ package com.simplify.android.sdk.api;
 import com.simplify.android.sdk.api.card.Card;
 import junit.framework.TestCase;
 
-/**
- * @author Paul S. Hawke (paul.hawke@gmail.com)
- *         On: 6/7/13 at 9:32 PM
- */
 public class BrandDiscoveryTest extends TestCase {
     public void testJCB() {
         assertRange(3528, 3589, Card.Brand.JCB);

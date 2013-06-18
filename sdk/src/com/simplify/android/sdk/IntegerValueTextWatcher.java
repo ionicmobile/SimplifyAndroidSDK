@@ -3,13 +3,6 @@ package com.simplify.android.sdk;
 import android.text.Editable;
 import android.widget.EditText;
 
-/**
- * Created with IntelliJ IDEA.
- * User: paul.hawke
- * Date: 6/11/13
- * Time: 2:33 PM
- * To change this template use File | Settings | File Templates.
- */
 class IntegerValueTextWatcher extends FixedLengthTextWatcher {
     private final int minValue;
     private final int maxValue;

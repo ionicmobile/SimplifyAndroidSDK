@@ -5,10 +5,6 @@ import junit.framework.TestCase;
 
 import java.util.Calendar;
 
-/**
- * @author Paul S. Hawke (paul.hawke@gmail.com)
- *         On: 6/7/13 at 10:32 PM
- */
 public class CreditCardValidationTest extends TestCase {
     public void testInvalidCardNumbers() {
         assertFalse(Card.validateNumber("1231231231"));

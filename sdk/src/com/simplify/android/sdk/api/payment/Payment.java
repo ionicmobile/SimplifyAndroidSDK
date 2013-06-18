@@ -8,6 +8,8 @@ import com.simplify.android.sdk.api.card.CardToken;
  * Model a credit card payment, to expose the <strong>Simplify.com</strong> API.
  */
 public class Payment {
+    public static final String DEFAULT_CURRENCY = "USD";
+
     private long amount;
     private String currency;
     private BasicCardDetails card;
@@ -16,7 +18,7 @@ public class Payment {
     private String token;
 
     public Payment(long amount) {
-        this(amount, "USD");
+        this(amount, DEFAULT_CURRENCY);
     }
 
     public Payment(long amount, String currency) {
