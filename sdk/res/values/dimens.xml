@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="edit_field_icon_space">30dp</dimen>
-    <dimen name="expiration_date_separator_text_size">16dp</dimen>
-    <dimen name="icon_top_padding">12dp</dimen>
-    <dimen name="icon_bottom_padding">6dp</dimen>
+    <dimen name="expiration_date_separator_text_size">20dp</dimen>
+    <dimen name="expiration_date_separator_top_padding">4dp</dimen>
+
+    <dimen name="edit_field_icon_space">40dp</dimen>
     <dimen name="icon_left_padding">4dp</dimen>
     <dimen name="icon_right_padding">4dp</dimen>
+    <dimen name="icon_top_padding">4dp</dimen>
+    <dimen name="icon_bottom_padding">4dp</dimen>
 </resources>

@@ -45,6 +45,7 @@
         android:layout_toRightOf="@id/cc_exp_month"
         android:layout_below="@id/cc_field"
         android:text="@string/slash"
+        android:paddingTop="@dimen/expiration_date_separator_top_padding"
         android:textSize="@dimen/expiration_date_separator_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
