@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.simplify.android.sdk.api.card.CardToken;
 import com.simplify.android.sdk.api.card.TokenAssignmentListener;
+import com.simplify.android.sdk.api.payment.Payment;
+import com.simplify.android.sdk.api.payment.PaymentReceipt;
+import com.simplify.android.sdk.api.payment.PaymentReceivedListener;
 
 public class MainActivity extends Activity {
 
@@ -42,7 +45,23 @@ public class MainActivity extends Activity {
         if (cardEditor.getCard().requestToken(new TokenAssignmentListener() {
             @Override
             public void tokenAssigned(CardToken token) {
-                Log.e("SIMP", "### Response - "+ String.valueOf(token.getId()));
+                showToast("Token received: "+token.getId());
+
+                // Note: this is where I could easily send a payment for $10 using the token
+                Payment payment = new Payment(1000);
+                if (payment.submitPayment(token, new PaymentReceivedListener() {
+                    @Override
+                    public void paymentReceived(PaymentReceipt receipt) {
+                        // Payment succeeded, so process the receipt.
+                    }
+
+                    @Override
+                    public void handleError(int statusCode, String message) {
+                        // Payment failed.
+                    }
+                })) {
+                    showToast("Payment transmitted");
+                };
             }
 
             @Override
@@ -51,7 +70,11 @@ public class MainActivity extends Activity {
                 Log.e("SIMP", "### Error Message: "+message);
             }
         })) {
-            Toast.makeText(this, "Sure thing, boss", 2000).show();
+            showToast("Token requested");
         }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, 2000).show();
     }
 }

@@ -8,13 +8,15 @@
     android:layout_height="fill_parent">
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, MainActivity" />
+        android:text="Enter card details"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <com.simplify.android.sdk.CreditCardEditor
         android:id="@+id/credit_card"
         simplify:showAddress="true"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
