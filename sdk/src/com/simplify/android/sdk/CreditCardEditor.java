@@ -109,6 +109,7 @@ public class CreditCardEditor extends RelativeLayout {
     private String threeDigitCvcHint;
     private String fourDigitCvcHint;
     private boolean showAddress;
+    private boolean showCountry;
 
     public CreditCardEditor(Context context) {
         super(context);
@@ -129,6 +130,7 @@ public class CreditCardEditor extends RelativeLayout {
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CreditCardEditor, 0, 0);
         try {
             showAddress = a.getBoolean(R.styleable.CreditCardEditor_showAddress, false);
+            showCountry = a.getBoolean(R.styleable.CreditCardEditor_showCountry, false);
         } finally {
             a.recycle();
         }
@@ -192,6 +194,7 @@ public class CreditCardEditor extends RelativeLayout {
         cvc.addTextChangedListener(cvcWatcher);
 
         zipWatcher = new FixedLengthTextWatcher(addressZip, 5);
+        addressZip.addTextChangedListener(zipWatcher);
     }
 
     private void createLayout(Context context, boolean showAddress) {
@@ -212,7 +215,9 @@ public class CreditCardEditor extends RelativeLayout {
         addressCity = (EditText)view.findViewById(R.id.cc_address_city);
         addressState = (EditText)view.findViewById(R.id.cc_address_state);
         addressZip = (EditText)view.findViewById(R.id.cc_address_zip);
+
         addressCountry = (EditText)view.findViewById(R.id.cc_address_country);
+        addressCountry.setVisibility(showCountry ? View.VISIBLE : View.GONE);
     }
 
     public Card getCard() {
@@ -227,7 +232,9 @@ public class CreditCardEditor extends RelativeLayout {
             card.setAddressCity(addressCity.getText().toString());
             card.setAddressState(addressState.getText().toString());
             card.setAddressZip(addressZip.getText().toString());
-            card.setAddressCountry(addressCountry.getText().toString());
+            if (showCountry) {
+                card.setAddressCountry(addressCountry.getText().toString());
+            }
         }
         return card;
     }

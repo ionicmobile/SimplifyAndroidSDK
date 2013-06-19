@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="CreditCardEditor">
         <attr name="showAddress" format="boolean"/>
+        <attr name="showCountry" format="boolean"/>
     </declare-styleable>
 </resources>
