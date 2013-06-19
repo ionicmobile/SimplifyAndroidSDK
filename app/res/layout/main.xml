@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:simplify="http://schemas.android.com/apk/res/com.simplify.android.sdk"
-    android:orientation="vertical"
-    android:background="@drawable/graphite_gradient"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    >
 
-    <TextView
-        android:text="Enter card details"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/graphite_gradient"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
 
-    <com.simplify.android.sdk.CreditCardEditor
-        android:id="@+id/credit_card"
-        simplify:showAddress="true"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:text="Enter card details"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <Button android:id="@+id/send_button"
+        <com.simplify.android.sdk.CreditCardEditor
+            android:id="@+id/credit_card"
+            simplify:showAddress="true"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/send_button"
             android:layout_marginTop="24dp"
             android:enabled="false"
             android:onClick="lookupToken"
             android:text="@string/lookup_token_button_text"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
-</LinearLayout>
-
+    </LinearLayout>
+</ScrollView>
