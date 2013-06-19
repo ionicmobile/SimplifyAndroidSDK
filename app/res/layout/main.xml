@@ -3,15 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:simplify="http://schemas.android.com/apk/res/com.simplify.android.sdk"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="@drawable/graphite_gradient"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <TextView
             android:text="Enter card details"

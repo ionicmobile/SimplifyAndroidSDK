@@ -75,22 +75,7 @@ public class MainActivity extends Activity {
             @Override
             public void tokenAssigned(CardToken token) {
                 showToast("Token received: "+token.getId());
-
-                // Note: this is where I could easily send a payment for $10 using the token
-                Payment payment = new Payment(1000);
-                if (payment.submitPayment(token, new PaymentReceivedListener() {
-                    @Override
-                    public void paymentReceived(PaymentReceipt receipt) {
-                        // Payment succeeded, so process the receipt.
-                    }
-
-                    @Override
-                    public void handleError(int statusCode, String message) {
-                        // Payment failed.
-                    }
-                })) {
-                    showToast("Payment transmitted");
-                };
+                submitPayment(token);
             }
 
             @Override
@@ -101,6 +86,26 @@ public class MainActivity extends Activity {
         })) {
             showToast("Token requested");
         }
+    }
+
+    private void submitPayment(CardToken token) {
+        // Note: this is where I could easily send a payment for $10 using the token
+        Payment payment = new Payment(1000);
+        if (payment.submitPayment(token, new PaymentReceivedListener() {
+            @Override
+            public void paymentReceived(PaymentReceipt receipt) {
+                showToast("Payment received, thanks.");
+            }
+
+            @Override
+            public void handleError(int statusCode, String message) {
+                Log.e("SIMP", "### Error Code: "+statusCode);
+                Log.e("SIMP", "### Error Message: "+message);
+            }
+        })) {
+            showToast("Payment transmitted");
+        }
+        ;
     }
 
     private void showToast(String message) {

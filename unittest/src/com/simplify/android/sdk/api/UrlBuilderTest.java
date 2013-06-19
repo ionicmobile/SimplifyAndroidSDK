@@ -93,9 +93,23 @@ public class UrlBuilderTest extends TestCase {
         assertEquals("http://foo.bar.com/baz/qux?k1=100%25&k2=%26me+too&k3=%2Bthat+guy", urlString);
     }
 
-    public void testAddingOptionalParameter() {
+    public void testAddingOptionalParameterWhenNull() {
         String urlString = new UrlBuilder("http://foo.bar.com/").addPath("/baz").
                 addPath("/qux").addParam("k1", "100%").addOptionalParam("k2", null).
+                addOptionalParam("k3", "+that guy").build();
+        assertEquals("http://foo.bar.com/baz/qux?k1=100%25&k3=%2Bthat+guy", urlString);
+    }
+
+    public void testAddingOptionalParameterWhenLiteralStringNull() {
+        String urlString = new UrlBuilder("http://foo.bar.com/").addPath("/baz").
+                addPath("/qux").addParam("k1", "100%").addOptionalParam("k2", "null").
+                addOptionalParam("k3", "+that guy").build();
+        assertEquals("http://foo.bar.com/baz/qux?k1=100%25&k3=%2Bthat+guy", urlString);
+    }
+
+    public void testAddingOptionalParameterWhenEmptyString() {
+        String urlString = new UrlBuilder("http://foo.bar.com/").addPath("/baz").
+                addPath("/qux").addParam("k1", "100%").addOptionalParam("k2", " ").addOptionalParam("k24", "").
                 addOptionalParam("k3", "+that guy").build();
         assertEquals("http://foo.bar.com/baz/qux?k1=100%25&k3=%2Bthat+guy", urlString);
     }

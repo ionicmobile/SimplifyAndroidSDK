@@ -72,7 +72,7 @@ public class UrlBuilder {
     }
 
     public UrlBuilder addOptionalParam(String key, String value) {
-        if (value != null) {
+        if (value != null && value.trim().length() > 0 && !"null".equalsIgnoreCase(value)) {
             params.add(new BasicNameValuePair(key, value));
         }
         return this;

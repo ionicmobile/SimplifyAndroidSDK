@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Simplify Android SDK App</string>
     <string name="lookup_token_button_text">Lookup Token</string>
+    <string name="about_button_text">Anout</string>
 </resources>
