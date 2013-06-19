@@ -34,13 +34,13 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import com.simplify.android.sdk.api.card.Brand;
 import com.simplify.android.sdk.api.card.Card;
 
 import java.util.ArrayList;
@@ -78,16 +78,16 @@ import java.util.Map;
 public class CreditCardEditor extends RelativeLayout {
     private static final int MIN_MONTH = 1;
     private static final int MAX_MONTH = 12;
-    private final Map<Card.Brand, Integer> brandToImageResourceMap =
-            new HashMap<Card.Brand, Integer>() {{
-                put(Card.Brand.UNKNOWN, R.drawable.brand_unknown);
-                put(Card.Brand.AMEX, R.drawable.brand_amex);
-                put(Card.Brand.DISCOVER, R.drawable.brand_discover);
-                put(Card.Brand.MASTERCARD, R.drawable.brand_mastercard);
-                put(Card.Brand.VISA, R.drawable.brand_visa);
-                put(Card.Brand.DINERS_CLUB, R.drawable.brand_diners_club);
-                put(Card.Brand.CHINA_UNIONPAY, R.drawable.brand_china_union_pay);
-                put(Card.Brand.JCB, R.drawable.brand_jcb);
+    private final Map<Brand, Integer> brandToImageResourceMap =
+            new HashMap<Brand, Integer>() {{
+                put(Brand.UNKNOWN, R.drawable.brand_unknown);
+                put(Brand.AMEX, R.drawable.brand_amex);
+                put(Brand.DISCOVER, R.drawable.brand_discover);
+                put(Brand.MASTERCARD, R.drawable.brand_mastercard);
+                put(Brand.VISA, R.drawable.brand_visa);
+                put(Brand.DINERS_CLUB, R.drawable.brand_diners_club);
+                put(Brand.CHINA_UNIONPAY, R.drawable.brand_china_union_pay);
+                put(Brand.JCB, R.drawable.brand_jcb);
             }};
     private EditText ccEditorView;
     private EditText expMonth;
@@ -110,6 +110,7 @@ public class CreditCardEditor extends RelativeLayout {
     private String fourDigitCvcHint;
     private boolean showAddress;
     private boolean showCountry;
+    private Brand brandInField;
 
     public CreditCardEditor(Context context) {
         super(context);
@@ -143,7 +144,7 @@ public class CreditCardEditor extends RelativeLayout {
         threeDigitCvcHint = context.getResources().getString(R.string.three_digit_cvc_hint);
         fourDigitCvcHint = context.getResources().getString(R.string.four_digit_cvc_hint);
 
-        cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Card.Brand.UNKNOWN.getMaxLength());
+        cardTextWatcher = new FixedLengthTextWatcher(ccEditorView, Brand.UNKNOWN.getMaxLength());
         cardTextWatcher.setEntryCompleteListener(new EntryCompleteListener() {
             @Override
             public void entryComplete(View editorView) {
@@ -264,7 +265,7 @@ public class CreditCardEditor extends RelativeLayout {
     }
 
 
-    private void fireBrandChange(Card.Brand brand) {
+    private void fireBrandChange(Brand brand) {
         for (BrandChangedListener brandChangedListener : brandChangedListeners) {
             brandChangedListener.brandChanged(this, brand);
         }
@@ -283,12 +284,15 @@ public class CreditCardEditor extends RelativeLayout {
     }
 
     private class BrandChangedHandler implements BrandChangedListener {
-        public void brandChanged(View sourceView, Card.Brand brand) {
-            cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
-            cvcWatcher.setMaxFieldLength(brand.getCvcLength());
-            cvc.setHint(brand.getCvcLength() == 4 ? fourDigitCvcHint : threeDigitCvcHint);
-            imageView.setImageResource(brandToImageResourceMap.get(brand));
-            fireBrandChange(brand);
+        public void brandChanged(View sourceView, Brand brand) {
+            if (!brand.equals(brandInField)) {
+                brandInField = brand;
+                cardTextWatcher.setMaxFieldLength(brand.getMaxLength());
+                cvcWatcher.setMaxFieldLength(brand.getCvcLength());
+                cvc.setHint(brand.getCvcLength() == 4 ? fourDigitCvcHint : threeDigitCvcHint);
+                imageView.setImageResource(brandToImageResourceMap.get(brand));
+                fireBrandChange(brand);
+            }
         }
     }
 

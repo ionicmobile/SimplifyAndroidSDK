@@ -31,6 +31,7 @@ package com.simplify.android.sdk;
 
 import android.test.AndroidTestCase;
 import android.view.View;
+import com.simplify.android.sdk.api.card.Brand;
 import com.simplify.android.sdk.api.card.Card;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -61,9 +62,9 @@ public class CreditCardEditorTest extends AndroidTestCase {
         view.setCard(new Card("3400", "", 1, 1));
         view.setCard(new Card("0000", "", 1, 1));
 
-        ArgumentCaptor<Card.Brand> captor = ArgumentCaptor.forClass(Card.Brand.class);
+        ArgumentCaptor<Brand> captor = ArgumentCaptor.forClass(Brand.class);
         verify(brandChangedListener, times(3)).brandChanged(eq(view), captor.capture());
-        assertEquals(Arrays.asList(Card.Brand.VISA, Card.Brand.AMEX, Card.Brand.UNKNOWN), captor.getAllValues());
+        assertEquals(Arrays.asList(Brand.VISA, Brand.AMEX, Brand.UNKNOWN), captor.getAllValues());
     }
 
     public void testCreditCardEntryIncompleteEvent_CardNumber() {

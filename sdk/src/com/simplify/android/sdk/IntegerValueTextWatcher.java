@@ -30,6 +30,7 @@
 package com.simplify.android.sdk;
 
 import android.text.Editable;
+import android.util.Log;
 import android.widget.EditText;
 
 class IntegerValueTextWatcher extends FixedLengthTextWatcher {

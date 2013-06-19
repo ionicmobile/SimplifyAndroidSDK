@@ -31,6 +31,7 @@ package com.simplify.android.sdk;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 
 class FixedLengthTextWatcher implements TextWatcher {

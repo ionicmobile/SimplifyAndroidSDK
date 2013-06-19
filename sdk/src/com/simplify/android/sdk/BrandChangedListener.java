@@ -30,7 +30,7 @@
 package com.simplify.android.sdk;
 
 import android.view.View;
-import com.simplify.android.sdk.api.card.Card;
+import com.simplify.android.sdk.api.card.Brand;
 
 /**
  * Notified when the <code>Brand</code> associated with the card number being entered
@@ -38,5 +38,5 @@ import com.simplify.android.sdk.api.card.Card;
  * @see com.simplify.android.sdk.api.card.Card
  */
 public interface BrandChangedListener {
-    void brandChanged(View sourceView, Card.Brand brand);
+    void brandChanged(View sourceView, Brand brand);
 }

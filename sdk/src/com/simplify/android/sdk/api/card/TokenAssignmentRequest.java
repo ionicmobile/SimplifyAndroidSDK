@@ -65,12 +65,12 @@ class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssig
                     .addParam("card.cvc", params[0].getCvc())
                     .addParam("card.expMonth", "" + params[0].getExpMonth())
                     .addParam("card.expYear", "" + params[0].getExpYear())
-                    .addOptionalParam("card.addressCity", "" + params[0].getAddressCity())
-                    .addOptionalParam("card.addressCountry", "" + params[0].getAddressCountry())
-                    .addOptionalParam("card.addressLine1", "" + params[0].getAddressLine1())
-                    .addOptionalParam("card.addressLine2", "" + params[0].getAddressLine2())
-                    .addOptionalParam("card.addressState", "" + params[0].getAddressState())
-                    .addOptionalParam("card.addressZip", "" + params[0].getAddressCity())
+                    .addOptionalParam("card.addressCity", params[0].getAddressCity())
+                    .addOptionalParam("card.addressCountry", params[0].getAddressCountry())
+                    .addOptionalParam("card.addressLine1", params[0].getAddressLine1())
+                    .addOptionalParam("card.addressLine2", params[0].getAddressLine2())
+                    .addOptionalParam("card.addressState", params[0].getAddressState())
+                    .addOptionalParam("card.addressZip", params[0].getAddressZip())
                     .addOptionalParam("card.name", "" + params[0].getName())
                     .build());
             String responseBody = httpclient.execute(httpget, new BasicResponseHandler());
