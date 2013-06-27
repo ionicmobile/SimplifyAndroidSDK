@@ -68,11 +68,44 @@
     -->
     <import file="custom_rules.xml" optional="true"/>
 
-    <target name="javadoc">
+	<target name="clean_javadoc">
+		<delete dir="doc"/>
+	</target>
+
+    <target name="javadoc" depends="clean_javadoc">
         <mkdir dir="doc" />
-        <delete dir="doc/**/*.*" />
         <javadoc sourcepath="${source.dir}" destdir="doc" />
     </target>
+	
+	<target name="clean_dist" depends="clean">
+		<delete dir="dist"/>
+	</target>
+	
+	<target name="package" depends="clean_dist, javadoc">
+        <mkdir dir="dist" />
+        <mkdir dir="dist/src" />
+        <mkdir dir="dist/doc" />
+        <mkdir dir="dist/libs" />
+        <mkdir dir="dist/res" />
+	    <copy todir="dist/src">
+	       <fileset dir="src"/>
+	     </copy>
+ 	    <copy todir="dist/doc">
+ 	       <fileset dir="doc"/>
+ 	     </copy>
+  	    <copy todir="dist/libs">
+  	       <fileset dir="libs"/>
+  	     </copy>
+  	    <copy todir="dist/res">
+  	       <fileset dir="res"/>
+  	     </copy>
+		 <copy todir="dist" file="ant.properties" />
+		 <copy todir="dist" file="build.xml" />
+		 <copy todir="dist" file="proguard-project.txt" />
+		 <copy todir="dist" file="project.properties" />
+		 <copy todir="dist" file="AndroidManifest.xml" />
+		 <zip destfile="dist/simplify-sdk.zip" basedir="dist"/>
+	</target>
 
     <!-- Import the actual build file.
 
