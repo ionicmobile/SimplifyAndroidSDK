@@ -76,11 +76,11 @@
         <mkdir dir="doc" />
         <javadoc sourcepath="${source.dir}" destdir="doc" />
     </target>
-	
+
 	<target name="clean_dist" depends="clean">
 		<delete dir="dist"/>
 	</target>
-	
+
 	<target name="package" depends="clean_dist, javadoc">
         <mkdir dir="dist" />
         <mkdir dir="dist/src" />
@@ -104,7 +104,7 @@
 		 <copy todir="dist" file="proguard-project.txt" />
 		 <copy todir="dist" file="project.properties" />
 		 <copy todir="dist" file="AndroidManifest.xml" />
-		 <zip destfile="dist/simplify-sdk.zip" basedir="dist"/>
+		 <zip destfile="dist/simplify-androidsdk.zip" basedir="dist"/>
 	</target>
 
     <!-- Import the actual build file.
