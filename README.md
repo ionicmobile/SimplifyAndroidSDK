@@ -1,7 +1,7 @@
 SimplifyAndroidSDK
 ==================
 
-Android SDK for Mastercard API. Download the binary [here](http://www.asynchrony.com/wp-content/themes/asynchrony3/simplify-androidsdk.zip).
+Android SDK for Mastercard API. Download the binary [here](http://www.asynchrony.com/wp-content/themes/asynchrony3/simplify-androidsdk.zip). To get started, ensure that the AndroidSDK is in your path, and run the docs/project_setup.sh script.
 
 Project Organization
 --------------------
