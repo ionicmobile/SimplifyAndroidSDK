@@ -26,7 +26,7 @@ public class PostBuilderTest extends TestCase {
 		assertEquals(expectedJson, actual);
 	}
 	
-	public void testOptionalParamsDontAddEmptyJson() {
+	public void testOptionalParamsAreBuiltCorrectly() {
 		String addressCity = "testCity";
 		actualCard.setAddressCity(addressCity);
 		String addressCountry = "testCountry";

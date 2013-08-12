@@ -22,25 +22,25 @@ public class PostBuilder {
 		cardMap.put("expYear", card.getExpYear()+"");
 		
 		// Optional parameters
-		if (TextUtils.isEmpty(card.getAddressCountry())) {
+		if (!TextUtils.isEmpty(card.getAddressCountry())) {
 			cardMap.put("addressCountry", card.getAddressCountry());	
 		}
-		if (TextUtils.isEmpty(card.getAddressCity())) {
+		if (!TextUtils.isEmpty(card.getAddressCity())) {
 			cardMap.put("addressCity", card.getAddressCity());
 		}
-		if (TextUtils.isEmpty(card.getAddressLine1())) {
+		if (!TextUtils.isEmpty(card.getAddressLine1())) {
 			cardMap.put("addressLine1", card.getAddressLine1());
 		}
-		if (TextUtils.isEmpty(card.getAddressLine2())) {
+		if (!TextUtils.isEmpty(card.getAddressLine2())) {
 			cardMap.put("addressLine2", card.getAddressLine2());
 		}
-		if (TextUtils.isEmpty(card.getAddressState())) {
+		if (!TextUtils.isEmpty(card.getAddressState())) {
 			cardMap.put("addressState", card.getAddressState());
 		}
-		if (TextUtils.isEmpty(card.getAddressZip())) {
+		if (!TextUtils.isEmpty(card.getAddressZip())) {
 			cardMap.put("addressZip", card.getAddressZip());
 		}
-		if (TextUtils.isEmpty(card.getName())) {
+		if (!TextUtils.isEmpty(card.getName())) {
 			cardMap.put("name", card.getName());
 		}
 		
