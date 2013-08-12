@@ -22,10 +22,6 @@ public class PostBuilderTest extends TestCase {
 		String expectedJson = "{\"key\":\""+ApiConstants.API_KEY+"\",\"card\":{\"number\":\""+cardNumber+"\",\"cvc\":\""+cvc+"\",\"expMonth\":\""+expirationMonth+"\",\"expYear\":\""+expirationYear+"\"}}";
 
 		String actual = testObject.toJson(actualCard);
-		
-		//TODO: remove printlns
-		System.out.println("Actual: " + actual);
-		System.out.println("Expected: " + expectedJson);
 
 		assertEquals(expectedJson, actual);
 	}
