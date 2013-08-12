@@ -29,17 +29,23 @@
  */
 package com.simplify.android.sdk.api.card;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.HttpResponseException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.simplify.android.sdk.api.ApiConstants;
 import com.simplify.android.sdk.api.AsyncApiRequest;
 import com.simplify.android.sdk.api.UrlBuilder;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.HttpResponseException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.IOException;
 
 /**
  * Used by a <code>Card</code> to makes an asynchronous call to the <strong>Simplify.com</strong>
@@ -58,23 +64,57 @@ class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssig
     protected CardToken callServer(Card... params) throws HttpResponseException {
         HttpClient httpclient = new DefaultHttpClient();
         try {
-            HttpGet httpget = new HttpGet(new UrlBuilder(ApiConstants.URL_BASE)
-                    .addPath("/payment/cardToken")
-                    .addParam("key", ApiConstants.API_KEY)
-                    .addParam("card.number", params[0].getNumber())
-                    .addParam("card.cvc", params[0].getCvc())
-                    .addParam("card.expMonth", "" + params[0].getExpMonth())
-                    .addParam("card.expYear", "" + params[0].getExpYear())
-                    .addOptionalParam("card.addressCity", params[0].getAddressCity())
-                    .addOptionalParam("card.addressCountry", params[0].getAddressCountry())
-                    .addOptionalParam("card.addressLine1", params[0].getAddressLine1())
-                    .addOptionalParam("card.addressLine2", params[0].getAddressLine2())
-                    .addOptionalParam("card.addressState", params[0].getAddressState())
-                    .addOptionalParam("card.addressZip", params[0].getAddressZip())
-                    .addOptionalParam("card.name", "" + params[0].getName())
-                    .build());
-            String responseBody = httpclient.execute(httpget, new BasicResponseHandler());
+        	HttpPost httpPost = new HttpPost(ApiConstants.URL_BASE);
+        	httpPost.setHeader("Accept","application/json");
+        	httpPost.setHeader("Content-type","application-json");
+        	
+//    		Map<String, Object> requiredParameters = new HashMap<String, Object>();
+//    		requiredParameters.put("key", ApiConstants.API_KEY);
+//    		
+//    		Map<String, String> cardMap = new HashMap<String, String>();
+//    		Card card = params[0];
+//    		cardMap.put("card.number", card.getNumber());
+//    		cardMap.put("card.cvc", card.getCvc());
+//    		cardMap.put("card.expMonth", card.getExpMonth()+"");
+//    		cardMap.put("card.expYear", card.getExpYear()+"");
+//    		cardMap.put("card.address", card.getExpYear()+"");
+//
+//    		if (params[0].getAddressCity()) {
+//    			cardMap.put("card.addressCity", params[0].getAddressCity());
+//    		}
+//          .addOptionalParam("card.addressCountry", params[0].getAddressCountry())
+//          .addOptionalParam("card.addressLine1", params[0].getAddressLine1())
+//          .addOptionalParam("card.addressLine2", params[0].getAddressLine2())
+//          .addOptionalParam("card.addressState", params[0].getAddressState())
+//          .addOptionalParam("card.addressZip", params[0].getAddressZip())
+//          .addOptionalParam("card.name", "" + params[0].getName())
+    		
+    		
+//    		requiredParameters.put("card", cardMap);     
+    		
+    		Gson gson = new Gson();
+    		httpPost.setEntity(new StringEntity(gson.toJson(params[0])));
+    		
+        	
+//            HttpGet httpget = new HttpGet(new UrlBuilder(ApiConstants.URL_BASE)
+//                    .addPath("/payment/cardToken")
+//                    .addParam("key", ApiConstants.API_KEY)
+//                    .addParam("card.number", params[0].getNumber())
+//                    .addParam("card.cvc", params[0].getCvc())
+//                    .addParam("card.expMonth", "" + params[0].getExpMonth())
+//                    .addParam("card.expYear", "" + params[0].getExpYear())
+//                    .addOptionalParam("card.addressCity", params[0].getAddressCity())
+//                    .addOptionalParam("card.addressCountry", params[0].getAddressCountry())
+//                    .addOptionalParam("card.addressLine1", params[0].getAddressLine1())
+//                    .addOptionalParam("card.addressLine2", params[0].getAddressLine2())
+//                    .addOptionalParam("card.addressState", params[0].getAddressState())
+//                    .addOptionalParam("card.addressZip", params[0].getAddressZip())
+//                    .addOptionalParam("card.name", "" + params[0].getName())
+//                    .build());
+//            String responseBody = httpclient.execute(httpget, new BasicResponseHandler());
+            String responseBody = httpclient.execute(httpPost, new BasicResponseHandler());
             return gson.fromJson(responseBody, CardToken.class);
+            
         } catch (IOException e) {
             return null;
         } catch (JsonSyntaxException e) {
