@@ -9,7 +9,9 @@ import com.google.gson.Gson;
 import com.simplify.android.sdk.api.card.Card;
 
 public class PostBuilder {
-	
+
+    private Gson gson = new Gson();
+
 	public String toJson(Card card) {
 		
 		Map<String, Object> parameters = new LinkedHashMap<String, Object>();
@@ -22,32 +24,24 @@ public class PostBuilder {
 		cardMap.put("expYear", card.getExpYear()+"");
 		
 		// Optional parameters
-		if (!TextUtils.isEmpty(card.getAddressCountry())) {
-			cardMap.put("addressCountry", card.getAddressCountry());	
-		}
-		if (!TextUtils.isEmpty(card.getAddressCity())) {
-			cardMap.put("addressCity", card.getAddressCity());
-		}
-		if (!TextUtils.isEmpty(card.getAddressLine1())) {
-			cardMap.put("addressLine1", card.getAddressLine1());
-		}
-		if (!TextUtils.isEmpty(card.getAddressLine2())) {
-			cardMap.put("addressLine2", card.getAddressLine2());
-		}
-		if (!TextUtils.isEmpty(card.getAddressState())) {
-			cardMap.put("addressState", card.getAddressState());
-		}
-		if (!TextUtils.isEmpty(card.getAddressZip())) {
-			cardMap.put("addressZip", card.getAddressZip());
-		}
-		if (!TextUtils.isEmpty(card.getName())) {
-			cardMap.put("name", card.getName());
-		}
-		
+        cardMap = putIfNotEmpty(cardMap, "addressCountry", card.getAddressCountry());
+        cardMap = putIfNotEmpty(cardMap, "addressCity", card.getAddressCity());
+        cardMap = putIfNotEmpty(cardMap, "addressLine1", card.getAddressLine1());
+        cardMap = putIfNotEmpty(cardMap, "addressLine2", card.getAddressLine2());
+        cardMap = putIfNotEmpty(cardMap, "addressState", card.getAddressState());
+        cardMap = putIfNotEmpty(cardMap, "addressZip", card.getAddressZip());
+        cardMap = putIfNotEmpty(cardMap, "name", card.getName());
+
 		parameters.put("card", cardMap);
-		
-		Gson gson = new Gson();
+
 		return gson.toJson(parameters);
 	}
+
+    private Map<String, String> putIfNotEmpty(Map<String, String> map, String jsonField, String cardField) {
+        if (!TextUtils.isEmpty(cardField)) {
+            map.put(jsonField, cardField);
+        }
+        return map;
+    }
 
 }

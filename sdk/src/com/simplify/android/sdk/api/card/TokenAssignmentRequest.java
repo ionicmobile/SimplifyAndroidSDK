@@ -53,6 +53,8 @@ import com.simplify.android.sdk.api.PostBuilder;
  */
 class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssignmentListener> {
 
+    private Gson gson = new Gson();
+
     public TokenAssignmentRequest(TokenAssignmentListener listener) {
         super(listener);
     }
@@ -65,8 +67,7 @@ class TokenAssignmentRequest extends AsyncApiRequest<Card, CardToken, TokenAssig
         	
         	httpPost.setHeader("Accept","application/json");
         	httpPost.setHeader("Content-type","application/json");
-    		
-    		Gson gson = new Gson();
+
     		httpPost.setEntity(new StringEntity(new PostBuilder().toJson(params[0])));
     		
             String responseBody = httpclient.execute(httpPost, new BasicResponseHandler());
