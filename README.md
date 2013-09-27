@@ -35,7 +35,7 @@ Using the card editor in an application
 
 ## Using the API
 
-Once you receive a Credit Card Token.  This token must be used in conjunction with one of the hosted
+Once you receive a Credit Card Token, this token must be used in conjunction with one of the hosted
 solutions documented on the [Simplify website](https://www.simplify.com/commerce/docs) to create
 and process a transaction.
 
